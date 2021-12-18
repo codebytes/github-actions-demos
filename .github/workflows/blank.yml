@@ -33,4 +33,4 @@ jobs:
     with:
       username: mona
     secrets:
-      envPAT: "shh!"
+      token: "shh!"
