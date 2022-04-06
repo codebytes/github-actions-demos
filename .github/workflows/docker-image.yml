@@ -6,12 +6,12 @@ on:
     branches: [ main ]
     paths:
       - '!**'
-      - 'containers-example/**'
+      - 'container-example/**'
   pull_request:
     branches: [ main ]
     paths:
       - '!**'
-      - 'containers-example/**'
+      - 'container-example/**'
     
 defaults:
   run:
