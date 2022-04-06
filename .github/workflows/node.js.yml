@@ -12,7 +12,7 @@ on:
 defaults:
   run:
     shell: bash
-    working-directory: ./node-example
+    working-directory: '$GITHUB_WORKSPACE/node-example'
 
 jobs:
   build-node:
