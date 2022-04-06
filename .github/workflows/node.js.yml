@@ -4,11 +4,18 @@
 name: Node.js CI
 
 on:
+  workflow_dispatch:
   push:
     branches: [ main ]
+    paths:
+      - '!**'
+      - 'node-example/**'
   pull_request:
     branches: [ main ]
-    
+    paths:
+      - '!**'
+      - 'node-example/**'
+   
 defaults:
   run:
     working-directory: node-example
