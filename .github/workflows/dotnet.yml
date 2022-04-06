@@ -47,3 +47,47 @@ jobs:
       with:
         name: iac
         path: ./dotnet-sample/iac
+
+  deploy-webapp:
+    needs: [build]
+    environment: dotnet
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout code
+    - name: Download IaC
+      uses: actions/download-artifact@v2
+      with:
+        name: iac
+        path: iac
+
+      # Log into Azure
+    - uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      # Deploy Bicep file
+    - name: deploy
+      id: deploy
+      uses: azure/arm-deploy@v1
+      with:
+        subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
+        resourceGroupName: ${{ secrets.AZURE_RG }}
+        template: ./iac/main.bicep
+        parameters: webAppName=${{ secrets.AZURE_APP_NAME }}
+        failOnStdErr: false
+    
+    - name: Download App
+      uses: actions/download-artifact@v2
+      with:
+        name: app  
+        path: app
+
+    - name: 'Run Azure webapp deploy action using publish profile credentials'
+      uses: azure/webapps-deploy@v2
+      with: 
+        app-name: ${{ steps.deploy.outputs.webAppName }} # Replace with your app name
+        package: 'app'
+    
+    - name: logout
+      run: |
+        az logout
