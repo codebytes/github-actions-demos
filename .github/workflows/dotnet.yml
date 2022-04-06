@@ -79,14 +79,14 @@ jobs:
     - name: Download App
       uses: actions/download-artifact@v2
       with:
-        name: app  
-        path: app
+        name: webapp  
+        path: webapp
 
     - name: 'Run Azure webapp deploy action using publish profile credentials'
       uses: azure/webapps-deploy@v2
       with: 
         app-name: ${{ steps.deploy.outputs.webAppName }} # Replace with your app name
-        package: 'app'
+        package: 'webapp'
     
     - name: logout
       run: |
