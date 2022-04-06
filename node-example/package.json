@@ -1,6 +1,6 @@
 {
   "name": "@codebyte5/node-example",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "a sample package",
   "main": "index.js",
   "scripts": {
