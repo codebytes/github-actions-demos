@@ -20,7 +20,7 @@ defaults:
 jobs:
 
   build:
-
+    environment: docker
     runs-on: ubuntu-latest
 
     steps:
