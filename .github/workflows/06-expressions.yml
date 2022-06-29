@@ -17,9 +17,8 @@ env:
   formatting: ${{ format('{{Hello {0} {1} {2}!}}', 'Mona', 'the', 'Octocat') }}
   endsWith: ${{ endsWith('Hello world', 'ld') }}
   containsString: ${{ contains('Hello world', 'llo') }}
-  presenters: ${{ fromJson('["Chris","Michael","Mauro"]') }}
-  containsArray: ${{ contains(env.presenters, 'chris') }}
-  presentersString: ${{ join(env.presenters, ', ') }}
+  containsArray: ${{ contains(fromJson('["Chris","Michael","Mauro"]'), 'chris') }}
+  presentersString: ${{ join(fromJson('["Chris","Michael","Mauro"]'), ', ') }}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
