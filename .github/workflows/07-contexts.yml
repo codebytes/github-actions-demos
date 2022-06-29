@@ -1,4 +1,4 @@
-name: Context testing
+name: 07 Contexts
 on: push
 
 jobs:
