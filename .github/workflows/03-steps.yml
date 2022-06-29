@@ -22,28 +22,28 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Runs a single command using the runners shell
-      - name: Display the path
+      - name: bash - Display the path
         run: echo $PATH
         shell: bash
-      - name: Display the path
+      - name: CMD - Display the path
         continue-on-error: true
         run: echo %PATH%
         shell: cmd
-      - name: Display the path
+      - name: PWSH - Display the path
         continue-on-error: true
         run: echo ${env:PATH}
         shell: pwsh
-      - name: Display the path
+      - name: PowerShell - Display the path
         continue-on-error: true
         run: echo ${env:PATH}
         shell: powershell
-      - name: Display the path
+      - name: Python - Display the path
         continue-on-error: true
         run: |
           import os
           print(os.environ['PATH'])
         shell: python
-      - name: Display the environment variables and their values
+      - name: Perl - Display the environment variables and their values
         continue-on-error: true
         run: |
           print %ENV
@@ -52,9 +52,9 @@ jobs:
       # Reference a specific commit
       - uses: actions/checkout@a81bbbf8298c0fa03ea29cdc473d45769f953675
       # Reference the major version of a release
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
       # Reference a specific version
-      - uses: actions/checkout@v3.2.0
+      - uses: actions/checkout@v3
       # Reference a branch
       - uses: actions/checkout@main
 
