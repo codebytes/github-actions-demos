@@ -23,7 +23,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Runs a single command using the runners shell
-      - name: Run a one-line script
+      - name: Hello Job1
         run: echo Hello from job1
   job2:
     # The type of runner that the job will run on
@@ -32,7 +32,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Runs a single command using the runners shell
-      - name: Run a one-line script
+      - name: Hello Job2
         run: echo Hello from job2
   job3:
     # The type of runner that the job will run on
@@ -41,5 +41,5 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Runs a single command using the runners shell
-      - name: Run a one-line script
+      - name: Hello Job3
         run: echo Hello from job3

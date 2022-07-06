@@ -8,12 +8,10 @@ on:
   push:
     branches: [ main ]
     paths:
-      - '!**'
       - 'node-example/**'
   pull_request:
     branches: [ main ]
     paths:
-      - '!**'
       - 'node-example/**'
    
 defaults:

@@ -36,8 +36,12 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-nuget-
 
-    - name: Build with dotnet
-      run: dotnet build --configuration Release
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --configuration Release --no-restore
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
 
     - name: dotnet publish
       run: dotnet publish -c Release -o ./webapp

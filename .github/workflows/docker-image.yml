@@ -5,12 +5,10 @@ on:
   push:
     branches: [ main ]
     paths:
-      - '!**'
       - 'container-example/**'
   pull_request:
     branches: [ main ]
     paths:
-      - '!**'
       - 'container-example/**'
     
 defaults:
@@ -35,4 +33,6 @@ jobs:
       with:
         context: container-example
         push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/static-site:latest
+        tags: |
+          ${{ secrets.DOCKER_USERNAME }}/static-site:latest
+          ${{ secrets.DOCKER_USERNAME }}/static-site:${{ env.GITHUB_REV }}
