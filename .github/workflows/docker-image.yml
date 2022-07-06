@@ -35,4 +35,4 @@ jobs:
         push: true
         tags: |
           ${{ secrets.DOCKER_USERNAME }}/static-site:latest
-          ${{ secrets.DOCKER_USERNAME }}/static-site:${{ env.GITHUB_REV }}
+          ${{ secrets.DOCKER_USERNAME }}/static-site:${{ github.sha }}
