@@ -45,14 +45,14 @@ style: |
 # YAML
 ## **Yet Another Markup Language**
 
-Github uses YAML for workflows
+GitHub uses YAML for workflows
 </div>
 <div>
 
 | Feature | Description |
 | --- | --- |
 | Lists | Start with a – |
-| Key/Value | Key: value |
+| Key-Value | Key: value |
 | Objects | Objects:<br>Properties of objects |
 
 </div>
