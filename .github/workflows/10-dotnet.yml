@@ -12,7 +12,11 @@ on:
     paths:
       - '!**'
       - 'dotnet-sample/**'
-    
+
+permissions:
+  id-token: write
+  contents: read
+
 defaults:
   run:
     working-directory: dotnet-sample
@@ -72,15 +76,17 @@ jobs:
 
       # Log into Azure
     - uses: azure/login@v1
+      name: Sign in to Azure
       with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        client-id: ${{ secrets.AZURE_CLIENT_ID }}
+        tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+        subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
       # Deploy Bicep file
     - name: deploy
       id: deploy
       uses: azure/arm-deploy@v1
       with:
-        subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
         resourceGroupName: ${{ secrets.AZURE_RG }}
         template: ./iac/main.bicep
         parameters: webAppName=${{ secrets.AZURE_APP_NAME }}
