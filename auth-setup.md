@@ -1,3 +1,4 @@
+```bash
 githubOrganizationName='codebytes'
 githubRepositoryName='github-actions-demos'
 
@@ -31,3 +32,4 @@ echo "AZURE_SUBSCRIPTION_ID: $AZURE_SUBSCRIPTION_ID"
 gh secret set AZURE_CLIENT_ID --body "$AZURE_CLIENT_ID"
 gh secret set AZURE_TENANT_ID --body "$AZURE_TENANT_ID"
 gh secret set AZURE_SUBSCRIPTION_ID --body "$AZURE_SUBSCRIPTION_ID"
+```
