@@ -8,6 +8,12 @@ style: |
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
   }
+  .columns3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  } 
+  @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css'
 ---
 
 ![bg](./img/bg.png)
@@ -93,6 +99,15 @@ GitHub uses YAML for workflows
 
 ---
 
+# ACT
+## Run Actions Locally
+
+<i class="fa-brands fa-github"></i>  [nektos/act](https://github.com/nektos/act)
+
+![bg right:50% contain](./img/act-quickstart-2.gif)
+
+---
+
 ![bg](./img/bg.png)
 # DEMOS
 
@@ -127,7 +142,3 @@ GitHub uses YAML for workflows
 </div>
 
 </div>
-
-<!-- mermaid.js -->
-<script src="https://unpkg.com/mermaid@9.3.0/dist/mermaid.min.js"></script>
-<script>mermaid.initialize({startOnLoad:true});</script>
