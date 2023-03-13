@@ -16,8 +16,10 @@ style: |
   @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css'
 ---
 
-![bg](./img/bg.png)
 # CI/CD with GitHub Actions
+
+![bg](./img/bg.png)
+
 
 ---
 
@@ -127,13 +129,14 @@ GitHub uses YAML for workflows
 
 ## Links
 
-- https://docs.github.com
-- https://skills.github.com
+- [https://docs.github.com](https://docs.github.com)
+- [https://skills.github.com](https://docs.github.com)
 - [codebytes/github-actions-demos](https://github.com/codebytes/github-actions-demos)
 </div>
 <div>
 
-## Chris Ayers
+## Follow Chris Ayers
+
 - Twitter: @Chris\_L\_Ayers
 - LinkedIn: - [chris\-l\-ayers](https://linkedin.com/in/chris-l-ayers/)
 - Blog: [https://chris-ayers\.com/](https://chris-ayers.com/)
