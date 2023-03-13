@@ -128,8 +128,8 @@ GitHub uses YAML for workflows
 ## Links
 
 - https://docs.github.com
-- [https://skills.github.com](https://skills.github.com)
-
+- https://skills.github.com
+- [codebytes/github-actions-demos](https://github.com/codebytes/github-actions-demos)
 </div>
 <div>
 
