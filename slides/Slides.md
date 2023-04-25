@@ -75,7 +75,39 @@ Demo: [Online Parser](https://yaml-online-parser.appspot.com/)
 ![bg](./img/bg.png)
 # What is CI/CD?
 
-![](./img/cicd.png)
+<div class="mermaid">
+flowchart LR
+  subgraph Continuous Integration
+    direction LR
+    A[Code] --Check In--> B[Build]
+    B --Auto--> C[Unit Tests]
+    C --Auto--> D[Dev Release]
+    D --Auto--> E[Additional Tests]
+  end
+</div>
+
+<div class="mermaid">
+flowchart LR
+  subgraph Continuous Delivery
+    direction LR
+    G[Code] --Check In--> H[Build]
+    H --Auto--> I[Unit Tests]
+    I --Auto--> J[Dev Release]
+    J --Auto--> K[Additional Tests]
+    K --Manual--> L[Release]
+  end
+</div>
+<div class="mermaid">
+flowchart LR
+  subgraph Continuous Deployment
+    direction LR
+    M[Code] --Check In--> N[Build]
+    N --Auto--> O[Unit Tests]
+    O --Auto--> P[Dev Release]
+    P --Auto--> Q[Additional Tests]
+    Q --Auto--> R[Release]
+  end
+</div>
 
 ---
 
@@ -88,7 +120,7 @@ Demo: [Online Parser](https://yaml-online-parser.appspot.com/)
 
 ---
 
-![bg right contain](./img/event-job.png)
+![bg right:60% w:700](./img/event-job.drawio.png)
 
 # Workflows
 - [Events](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows) trigger workflows
@@ -98,7 +130,7 @@ Demo: [Online Parser](https://yaml-online-parser.appspot.com/)
 
 ---
 
-![bg right contain](./img/job-runner.png)
+![bg right:60% w:750](./img/job-runner.drawio.png)
 # Jobs
 - Workflows can contain multiple jobs
 - Each job runs on a [Runner](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners)
@@ -150,3 +182,9 @@ Demo: [Online Parser](https://yaml-online-parser.appspot.com/)
 </div>
 
 </div>
+
+<!-- Needed for mermaid, can be anywhere in file except frontmatter -->
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true });
+</script>
