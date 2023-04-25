@@ -136,13 +136,6 @@ linkStyle 4 color:gree;
 - Jobs contain steps
 - Steps are commands or actions
 
-<div class="mermaid">
-flowchart LR
-  Event --> Job --> Step1[Step] --> Action1[Action]
-  Job --> Shell1[Shell Command]
-  Job --> Step2[Step] --> Action2[Action]
-</div>
-
 ---
 
 ![bg right:60% w:750](./img/job-runner.drawio.png)

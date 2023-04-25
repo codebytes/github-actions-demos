@@ -1,3 +1,5 @@
+name: 07b Vars
+
 on:
   workflow_dispatch:
 env:
