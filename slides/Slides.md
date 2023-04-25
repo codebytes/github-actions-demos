@@ -13,6 +13,12 @@ style: |
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1rem;
   } 
+  .ci {
+    width: 800px;
+  }
+  .cd {
+    width:960px;
+  }
   @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css'
 ---
 <!-- _footer: 'https://github.com/codebytes/github-actions-demos' -->
@@ -75,9 +81,9 @@ Demo: [Online Parser](https://yaml-online-parser.appspot.com/)
 ![bg](./img/bg.png)
 # What is CI/CD?
 
-<div class="mermaid">
+<div class="mermaid ci" >
 flowchart LR
-  subgraph Continuous Integration
+  subgraph Continuous Integration 
     direction LR
     A[Code] --Check In--> B[Build]
     B --Auto--> C[Unit Tests]
@@ -86,7 +92,7 @@ flowchart LR
   end
 </div>
 
-<div class="mermaid">
+<div class="mermaid cd">
 flowchart LR
   subgraph Continuous Delivery
     direction LR
@@ -96,8 +102,9 @@ flowchart LR
     J --Auto--> K[Additional Tests]
     K --Manual--> L[Release]
   end
+linkStyle 4 color:red;
 </div>
-<div class="mermaid">
+<div class="mermaid cd">
 flowchart LR
   subgraph Continuous Deployment
     direction LR
@@ -107,6 +114,7 @@ flowchart LR
     P --Auto--> Q[Additional Tests]
     Q --Auto--> R[Release]
   end
+linkStyle 4 color:gree;
 </div>
 
 ---
@@ -127,6 +135,13 @@ flowchart LR
 - Workflows contain jobs
 - Jobs contain steps
 - Steps are commands or actions
+
+<div class="mermaid">
+flowchart LR
+  Event --> Job --> Step1[Step] --> Action1[Action]
+  Job --> Shell1[Shell Command]
+  Job --> Step2[Step] --> Action2[Action]
+</div>
 
 ---
 
