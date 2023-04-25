@@ -25,7 +25,7 @@
 		"vscode": {
 			"settings": {},
 			"extensions": [
-				"cschleiden.vscode-github-actions",
+				"github.vscode-github-actions",
 				"github.vscode-pull-request-github",
 				"github.copilot",
 				"redhat.vscode-yaml",
