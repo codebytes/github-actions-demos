@@ -31,7 +31,8 @@
 				"redhat.vscode-yaml",
 				"yzhang.markdown-all-in-one",
 				"streetsidesoftware.code-spell-checker",
-				"marp-team.marp-vscode"
+				"marp-team.marp-vscode",
+				"ms-azuretools.vscode-bicep"
 			]
 		}
 	},
