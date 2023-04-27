@@ -25,6 +25,7 @@ style: |
 
 # CI/CD with GitHub Actions
 
+## Chris Ayers
 ![bg](./img/bg.png)
 
 ---
