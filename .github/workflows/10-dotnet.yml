@@ -69,7 +69,7 @@ jobs:
     steps:
       # Checkout code
     - name: Download IaC
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v3
       with:
         name: iac
         path: iac
@@ -93,7 +93,7 @@ jobs:
         failOnStdErr: false
     
     - name: Download App
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v3
       with:
         name: webapp  
         path: webapp
