@@ -40,7 +40,8 @@
 				"yzhang.markdown-all-in-one",
 				"streetsidesoftware.code-spell-checker",
 				"marp-team.marp-vscode",
-				"ms-azuretools.vscode-bicep"
+				"ms-azuretools.vscode-bicep",
+				"bierner.markdown-mermaid"
 			]
 		}
 	},
