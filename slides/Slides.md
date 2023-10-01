@@ -138,6 +138,65 @@ linkStyle 4 color:green;
 
 ---
 
+<!-- _footer: "https://docs.github.com/en/actions/security-guides" -->
+
+# Security
+
+
+<div class="columns">
+<div>
+
+- Never use structured data as a secret
+- Register all secrets used within workflows
+- Audit how secrets are handled
+- Use credentials that are minimally scoped
+- Audit and rotate registered secrets
+- Consider requiring review for access to secrets
+
+</div>
+<div>
+
+- Use an action instead of an inline script (recommended)
+- Use an intermediate environment variable
+- Use OpenID Connect to access cloud resources
+- Pin third-party actions to a full length commit SHA
+
+</div>
+</div>
+
+---
+
+# Actions Updates - Dependabot
+
+<div class="columns">
+<div>
+
+- Actions are regularly updated for enhanced automation.
+- Dependabot keeps GitHub Actions references in workflow.yml up-to-date.
+- If newer action versions exist, Dependabot sends an update pull request.
+- Dependabot also updates git references for reusable workflows.
+</div>
+<div>
+
+<br>
+
+```.github/dependabot.yml```
+```yaml
+version: 2
+updates:
+  # See documentation for possible values
+  - package-ecosystem: "github-actions"
+    # Location of package manifests
+    directory: "/" 
+    schedule:
+      interval: "weekly"
+```
+
+</div>
+</div>
+
+---
+
 # Questions
 
 ![bg auto](./img/background.jpg)
@@ -152,9 +211,10 @@ linkStyle 4 color:green;
 
 ## Links
 
-- [https://docs.github.com](https://docs.github.com)
-- [https://skills.github.com](https://docs.github.com)
-- [codebytes/github-actions-demos](https://github.com/codebytes/github-actions-demos)
+[https://docs.github.com](https://docs.github.com)
+[https://skills.github.com](https://docs.github.com)
+[https://docs.github.com/actions/security-guides](https://docs.github.com/actions/security-guides)
+[codebytes/github-actions-demos](https://github.com/codebytes/github-actions-demos)
 </div>
 <div>
 
