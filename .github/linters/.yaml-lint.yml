@@ -1,0 +1,7 @@
+---
+rules:
+  document-end: disable
+  document-start: disable
+  line-length:
+    level: warning
+    max: 100
