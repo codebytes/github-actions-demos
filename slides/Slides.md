@@ -1,32 +1,14 @@
 ---
 marp: true
-theme: default
+theme: custom-default
 footer: '@Chris_L_Ayers - https://chris-ayers.com'
-style: |
-  .columns {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
-  }
-  .columns3 {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
-  } 
-  .ci {
-    width: 800px;
-  }
-  .cd {
-    width:960px;
-  }
-  @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css'
 ---
 <!-- _footer: 'https://github.com/codebytes/github-actions-demos' -->
 
 # CI/CD with GitHub Actions
 
 ## Chris Ayers
-![bg](./img/bg.png)
+![bg right w:90%](./img/bg.png)
 
 ---
 
@@ -42,7 +24,7 @@ style: |
 <i class="fa-brands fa-github"></i> GitHub: [Codebytes](https://github.com/codebytes)
 
 ---
-![bg left](./img/bg.png)
+![bg left fit](./img/bg.png)
 
 # Agenda
 - YAML
@@ -51,8 +33,6 @@ style: |
 - Demos
 
 ---
-
-![bg](./img/bg.png)
 
 <div class="columns">
 <div>
@@ -79,7 +59,6 @@ Demo: [Online Parser](https://yaml-online-parser.appspot.com/)
 
 ---
 
-![bg](./img/bg.png)
 # What is CI/CD?
 
 <div class="mermaid ci" >
@@ -87,20 +66,19 @@ flowchart LR
   subgraph Continuous Integration 
     direction LR
     A[Code] --Check In--> B[Build]
-    B --Auto--> C[Unit Tests]
-    C --Auto--> D[Dev Release]
-    D --Auto--> E[Additional Tests]
+    B -- Auto --> C[Unit Tests]
+    C -- Auto --> D[Dev Release]
+    D -- Auto --> E[Additional Tests]
   end
 </div>
-
 <div class="mermaid cd">
 flowchart LR
   subgraph Continuous Delivery
     direction LR
     G[Code] --Check In--> H[Build]
-    H --Auto--> I[Unit Tests]
-    I --Auto--> J[Dev Release]
-    J --Auto--> K[Additional Tests]
+    H -- Auto --> I[Unit Tests]
+    I -- Auto --> J[Dev Release]
+    J -- Auto --> K[Additional Tests]
     K --Manual--> L[Release]
   end
 linkStyle 4 color:red;
@@ -110,12 +88,12 @@ flowchart LR
   subgraph Continuous Deployment
     direction LR
     M[Code] --Check In--> N[Build]
-    N --Auto--> O[Unit Tests]
-    O --Auto--> P[Dev Release]
-    P --Auto--> Q[Additional Tests]
-    Q --Auto--> R[Release]
+    N -- Auto --> O[Unit Tests]
+    O -- Auto --> P[Dev Release]
+    P -- Auto --> Q[Additional Tests]
+    Q -- Auto --> R[Release]
   end
-linkStyle 4 color:gree;
+linkStyle 4 color:green;
 </div>
 
 ---
@@ -139,7 +117,7 @@ linkStyle 4 color:gree;
 
 ---
 
-![bg right:60% w:750](./img/job-runner.drawio.png)
+![bg right:65% w:725](./img/job-runner.drawio.png)
 # Jobs
 - Workflows can contain multiple jobs
 - Each job runs on a [Runner](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners)
@@ -151,11 +129,11 @@ linkStyle 4 color:gree;
 
 <i class="fa-brands fa-github"></i>  [nektos/act](https://github.com/nektos/act)
 
-![bg right:50% contain](./img/act-quickstart-2.gif)
+![bg right:50% 95%](./img/act-quickstart-2.gif)
 
 ---
 
-![bg](./img/bg.png)
+![bg right fit](./img/bg.png)
 # DEMOS
 
 ---
