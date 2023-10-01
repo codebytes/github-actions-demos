@@ -6,9 +6,9 @@ name: 03 Steps
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -47,7 +47,7 @@ jobs:
         continue-on-error: true
         run: |
           print %ENV
-        shell: perl {0}    
+        shell: perl {0}
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       # Reference a specific commit
       - uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5
@@ -57,4 +57,3 @@ jobs:
       - uses: actions/checkout@v4
       # Reference a branch
       - uses: actions/checkout@main
-

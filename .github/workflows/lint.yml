@@ -8,8 +8,8 @@ jobs:
     name: Lint code
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    - name: Lint code
-      run: |
-        az bicep build --file bicep/main.bicep
+      - name: Lint code
+        run: |
+          az bicep build --file bicep/main.bicep

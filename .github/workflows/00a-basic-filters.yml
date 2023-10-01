@@ -6,21 +6,22 @@ name: 00 Basic Workflow
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches:    
+    branches:
       - main
       - 'mona/octocat'
       - 'releases/**'
     # Sequence of patterns matched against refs/tags
-    tags:        
+    tags:
       - v2
       - v1.*
     paths:
       - '**.js'
   pull_request:
-    branches: [ main ]
+    branches: [main]
+
   # schedule:
-    # * is a special character in YAML so you have to quote this string
-    # - cron:  '30 5,17 * * *'
+  # * is a special character in YAML so you have to quote this string
+  # - cron:  '30 5,17 * * *'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:

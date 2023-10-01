@@ -6,32 +6,31 @@ name: 09 Node.js Matrix
 on:
   workflow_dispatch:
   push:
-    branches: [ main ]
+    branches: [main]
     paths:
       - 'node-example/**'
   pull_request:
-    branches: [ main ]
+    branches: [main]
     paths:
       - 'node-example/**'
-   
+
 defaults:
   run:
     working-directory: node-example
 
 jobs:
   build-node:
-
     strategy:
       matrix:
         node-version: [12.x, 14.x, 16.x]
         os: [ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.os }}
     steps:
-    - uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm ci
+      - run: npm run build --if-present
+      - run: npm test
