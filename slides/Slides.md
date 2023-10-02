@@ -106,16 +106,52 @@ linkStyle 4 color:green;
 
 ---
 
-![bg right fit](./img/bg.png)
+![bg right w:90%](./img/github-workflows.png)
 # Actions Overview
 
-- Live in the .github/workflows folder
+- Live in the `.github/workflows` folder
 - Workflows are defined in YAML
 - Workflows are Event Driven
 
 ---
 
-![bg right:60% w:700](./img/event-job.drawio.png)
+# Events that trigger workflows
+[https://docs.github.com/actions/using-workflows/events-that-trigger-workflows](https://docs.github.com/actions/using-workflows/events-that-trigger-workflows)
+
+<div class="columns">
+<div>
+
+- branch_protection_rule
+- checks
+- create
+- delete
+- deployment
+- discussion
+- fork
+- issue_comment
+- issues
+- label
+
+</div>
+<div>
+
+- page_build
+- pull_request
+- pull_request_review
+- pull_request_review_comment
+- push
+- release
+- schedule
+- status
+- workflow_call
+- workflow_dispatch
+
+</div>
+</div>
+
+---
+
+![bg right fit](./img/event-job.drawio.png)
 
 # Workflows
 - [Events](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows) trigger workflows
@@ -125,10 +161,37 @@ linkStyle 4 color:green;
 
 ---
 
-![bg right:65% w:725](./img/job-runner.drawio.png)
+![bg right fit](./img/job-runner.drawio.png)
 # Jobs
 - Workflows can contain multiple jobs
+- Jobs run in parallel by default
 - Each job runs on a [Runner](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners)
+- Steps and Shell Commands run in sequence
+
+---
+
+# Runners
+
+- Specify the type of runner with `runs-on` (e.g., `ubuntu-latest`).
+- GitHub provisions a new VM for each job.
+- Steps in a job share information using the runner's filesystem.
+- VM is decommissioned after job completion.
+
+---
+
+# Supported runners and hardware
+
+- GitHub-hosted runner application is open source.
+- OS: Windows, Linux, and macOS
+  - Runners include preinstalled software, updated weekly.
+  - There are also Large Hosted Runners
+- Self-Hosted Runners
+- You can install additional software on runners.
+
+---
+
+![bg right fit](./img/bg.png)
+# DEMOS
 
 ---
 
@@ -138,11 +201,6 @@ linkStyle 4 color:green;
 <i class="fa-brands fa-github"></i>  [nektos/act](https://github.com/nektos/act)
 
 ![bg right:50% 95%](./img/act-quickstart-2.gif)
-
----
-
-![bg right fit](./img/bg.png)
-# DEMOS
 
 ---
 
@@ -188,7 +246,7 @@ linkStyle 4 color:green;
 
 <br>
 
-```.github/dependabot.yml```
+`.github/dependabot.yml`
 ```yaml
 version: 2
 updates:
@@ -221,7 +279,6 @@ updates:
 
 [https://docs.github.com](https://docs.github.com)
 [https://skills.github.com](https://docs.github.com)
-[https://docs.github.com/actions/security-guides](https://docs.github.com/actions/security-guides)
 [codebytes/github-actions-demos](https://github.com/codebytes/github-actions-demos)
 </div>
 <div>
