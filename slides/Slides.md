@@ -71,7 +71,7 @@ Demo: [Online Parser](https://yaml-online-parser.appspot.com/)
 
 <div class="mermaid ci" >
 flowchart LR
-  subgraph Continuous Integration 
+  subgraph Continuous Integration
     direction LR
     A[Code] --Check In--> B[Build]
     B -- Auto --> C[Unit Tests]
@@ -226,7 +226,7 @@ updates:
 </div>
 <div>
 
-## Follow Chris Ayers 
+## Follow Chris Ayers
 
 <i class="fa-brands fa-twitter"></i> Twitter: @Chris\_L\_Ayers
 <i class="fa-brands fa-mastodon"></i> Mastodon: @Chrisayers@hachyderm.io
