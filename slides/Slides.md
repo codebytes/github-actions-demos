@@ -55,11 +55,11 @@ Demo: [Online Parser](https://yaml-online-parser.appspot.com/)
 </div>
 <div>
 
-| Feature | Description |
-| --- | --- |
-| Lists | Start with a – |
-| Key-Value | Key: value |
-| Objects | Objects:<br>Properties of objects |
+| Feature   | Description                       |
+| --------- | --------------------------------- |
+| Lists     | Start with a –                    |
+| Key-Value | Key: value                        |
+| Objects   | Objects:<br>Properties of objects |
 
 </div>
 
