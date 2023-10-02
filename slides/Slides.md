@@ -44,6 +44,14 @@ GitHub uses YAML for workflows
 
 Demo: [Online Parser](https://yaml-online-parser.appspot.com/)
 
+<!-- Zelda:
+  type: pit bull
+  favoriteThings:
+  - treats
+  - naps
+  - belly rubs
+  toys: [bone, doll] -->
+
 </div>
 <div>
 
@@ -98,12 +106,12 @@ linkStyle 4 color:green;
 
 ---
 
-![bg](./img/bg.png)
+![bg right fit](./img/bg.png)
 # Actions Overview
 
-- Actions are Event Driven
 - Live in the .github/workflows folder
 - Workflows are defined in YAML
+- Workflows are Event Driven
 
 ---
 
