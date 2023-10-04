@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/debian
 {
-	"name": "Debian",
+	"name": "GitHub Actions",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"image": "mcr.microsoft.com/devcontainers/base:bullseye",
 	"features": {
@@ -20,25 +20,12 @@
 	"customizations": {
 		// Configure properties specific to VS Code.
 		"vscode": {
-			"settings": {
-				"markdown.marp.enableHtml": true,
-				"markdown.marp.themes": [
-					"./slides/themes/custom.css",
-					"./slides/themes/custom-default.css",
-					"./slides/themes/custom-gaia.css",
-					"./slides/themes/custom-uncover.css"
-				]
-			},
 			"extensions": [
 				"github.vscode-github-actions",
 				"github.vscode-pull-request-github",
 				"github.copilot",
 				"redhat.vscode-yaml",
-				"yzhang.markdown-all-in-one",
-				"streetsidesoftware.code-spell-checker",
-				"marp-team.marp-vscode",
-				"ms-azuretools.vscode-bicep",
-				"bierner.markdown-mermaid"
+				"streetsidesoftware.code-spell-checker"
 			]
 		}
 	},
