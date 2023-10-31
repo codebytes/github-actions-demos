@@ -52,7 +52,7 @@ jobs:
       # Reference a specific commit
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
       # Reference the major version of a release
-      - uses: actions/checkout@v4.1.1
+      - uses: actions/checkout@v4
       # Reference a specific version
       - uses: actions/checkout@v4.1.1
       # Reference a branch
