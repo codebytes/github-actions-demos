@@ -69,40 +69,7 @@ Demo: [Online Parser](https://yaml-online-parser.appspot.com/)
 
 # What is CI/CD?
 
-<div class="mermaid ci" >
-flowchart LR
-  subgraph Continuous Integration
-    direction LR
-    A[Code] --Check In--> B[Build]
-    B -- Auto --> C[Unit Tests]
-    C -- Auto --> D[Dev Release]
-    D -- Auto --> E[Additional Tests]
-  end
-</div>
-<div class="mermaid cd">
-flowchart LR
-  subgraph Continuous Delivery
-    direction LR
-    G[Code] --Check In--> H[Build]
-    H -- Auto --> I[Unit Tests]
-    I -- Auto --> J[Dev Release]
-    J -- Auto --> K[Additional Tests]
-    K --Manual--> L[Release]
-  end
-linkStyle 4 color:red;
-</div>
-<div class="mermaid cd">
-flowchart LR
-  subgraph Continuous Deployment
-    direction LR
-    M[Code] --Check In--> N[Build]
-    N -- Auto --> O[Unit Tests]
-    O -- Auto --> P[Dev Release]
-    P -- Auto --> Q[Additional Tests]
-    Q -- Auto --> R[Release]
-  end
-linkStyle 4 color:green;
-</div>
+![w:900px](./img/cicd.png)
 
 ---
 
