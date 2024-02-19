@@ -32,7 +32,7 @@ jobs:
             az group create \
               --name ${{ env.resourceGroupName }} \
               --location ${{ env.resourceGroupLocation }}
-      - uses: azure/arm-deploy@v1
+      - uses: azure/arm-deploy@v2
         id: deploy
         name: Deploy Bicep file
         with:
