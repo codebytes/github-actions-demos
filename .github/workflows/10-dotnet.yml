@@ -84,7 +84,7 @@ jobs:
         # Deploy Bicep file
       - name: deploy
         id: deploy
-        uses: azure/arm-deploy@v1
+        uses: azure/arm-deploy@v2
         with:
           resourceGroupName: ${{ secrets.AZURE_RG }}
           template: ./iac/main.bicep
