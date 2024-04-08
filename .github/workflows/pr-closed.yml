@@ -16,7 +16,7 @@ jobs:
   remove:
     runs-on: ubuntu-latest
     steps:
-      - uses: azure/login@v1
+      - uses: azure/login@v2
         name: Sign in to Azure
         with:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
