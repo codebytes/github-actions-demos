@@ -162,6 +162,15 @@ Demo: [Online Parser](https://yaml-online-parser.appspot.com/)
 
 ---
 
+# Workshop
+
+## [https://github.com/actions-workshop/actions-workshop](https://github.com/actions-workshop/actions-workshop)
+### [https://tinyurl.com/ghactions](https://tinyurl.com/ghactions)
+
+![bg right fit](img/qr-actions-workshop.png)
+
+---
+
 # ACT
 ## Run Actions Locally
 
@@ -230,6 +239,11 @@ updates:
 
 ---
 
+![bg right fit](./img/bg.png)
+# DEMOS
+
+---
+
 # Questions
 
 ![bg auto](./img/background.jpg)
@@ -244,9 +258,10 @@ updates:
 
 ## Links
 
-[https://docs.github.com](https://docs.github.com)
-[https://skills.github.com](https://docs.github.com)
-[codebytes/github-actions-demos](https://github.com/codebytes/github-actions-demos)
+- [https://docs.github.com](https://docs.github.com)
+- [https://skills.github.com](https://docs.github.com)
+- [codebytes/github-actions-demos](https://github.com/codebytes/github-actions-demos)
+- [https://learn.microsoft.com/en-us/training/paths/automate-workflow-github-actions/](https://learn.microsoft.com/en-us/training/paths/automate-workflow-github-actions/)
 </div>
 <div>
 
