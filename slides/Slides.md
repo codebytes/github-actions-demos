@@ -178,6 +178,8 @@ Demo: [Online Parser](https://yaml-online-parser.appspot.com/)
 
 ![bg right:50% 95%](./img/act-quickstart-2.gif)
 
+<!-- act -W .github/workflows/02-basic-multiple-jobs-needs.yml -->
+
 ---
 
 <!-- _footer: "https://docs.github.com/en/actions/security-guides" -->
