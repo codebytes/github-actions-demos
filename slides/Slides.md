@@ -96,8 +96,7 @@ Demo: [Online Parser](https://yaml-online-parser.appspot.com/)
 
 - branch_protection_rule
 - checks
-- create
-- delete
+- create / delete
 - deployment
 - discussion
 - fork
@@ -116,8 +115,7 @@ Demo: [Online Parser](https://yaml-online-parser.appspot.com/)
 - release
 - schedule
 - status
-- workflow_call
-- workflow_dispatch
+- workflow_call / workflow_dispatch
 
 </div>
 </div>
@@ -240,6 +238,19 @@ updates:
 
 ![bg right fit](./img/bg.png)
 # DEMOS
+
+---
+
+# Bonus - Private Networking
+
+- GitHub Actions is triggered.
+- Actions service creates a runner.
+- The runner service deploys the GitHub-hosted runner's NIC into your Azure VNET.
+- The runner agent picks up the workflow job.
+- The runner sends logs back to the GitHub Actions service.
+- NIC accesses private resources.
+
+![bg right fit](img/private-networking.png)
 
 ---
 
