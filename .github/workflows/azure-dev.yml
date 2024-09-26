@@ -16,6 +16,10 @@ permissions:
     id-token: write
     contents: read
   
+defaults:
+    run:
+        working-directory: aspire-sample
+
 jobs:
     build:
         runs-on: ubuntu-latest
