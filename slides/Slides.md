@@ -67,6 +67,12 @@ Demo: [Online Parser](https://yaml-online-parser.appspot.com/)
 
 ---
 
+# Workflows / Pipelines
+
+![w:1080px](./img/pipelines.drawio.png)
+
+---
+
 # What is CI/CD?
 
 ![w:900px](./img/cicd.png)
@@ -159,15 +165,6 @@ Demo: [Online Parser](https://yaml-online-parser.appspot.com/)
 
 ![bg right fit](./img/bg.png)
 # DEMOS
-
----
-
-# Workshop
-
-## [https://github.com/actions-workshop/actions-workshop](https://github.com/actions-workshop/actions-workshop)
-### [https://tinyurl.com/ghactions](https://tinyurl.com/ghactions)
-
-![bg right fit](img/qr-actions-workshop.png)
 
 ---
 
