@@ -15,7 +15,7 @@ footer: '@Chris_L_Ayers - https://chris-ayers.com'
 ![bg left:40%](./img/portrait.png)
 
 ## Chris Ayers
-### Senior Customer Engineer<br>Microsoft
+### Senior Site Reliability Engineer<br>Microsoft
 
 <i class="fa-brands fa-twitter"></i> Twitter: @Chris\_L\_Ayers
 <i class="fa-brands fa-mastodon"></i> Mastodon: @Chrisayers@hachyderm.io
