@@ -180,7 +180,7 @@ Demo: [Online Parser](https://yaml-online-parser.appspot.com/)
 
 # Supply Chain Attacks
 
-![bg fit right:75%](image.png)
+![bg fit right:75%](img/supply.png)
 
 ---
 
