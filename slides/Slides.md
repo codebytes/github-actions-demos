@@ -177,10 +177,15 @@ Demo: [Online Parser](https://yaml-online-parser.appspot.com/)
 
 ---
 
+# Supply Chain Attacks
+
+![bg fit right:75%](image.png)
+
+---
+
 <!-- _footer: "https://docs.github.com/en/actions/security-guides" -->
 
 # Security
-
 
 <div class="columns">
 <div>
@@ -251,6 +256,43 @@ updates:
 - NIC accesses private resources.
 
 ![bg right fit](img/private-networking.png)
+
+---
+
+# GitHub Well-Architected Framework
+
+![bg right fit](img/gh-waf.png)
+
+- **Community-driven guide** for deploying GitHub effectively.
+- Design principles
+- Framework pillars
+- Actionable, prescriptive advice
+
+---
+
+# GitHub Well-Architected Framework
+
+## Key Principles of the Framework
+
+<div class="columns"> 
+<div>
+
+- Security
+- Scalability
+- Automation
+- Collaboration
+
+</div>
+
+<div>
+
+- Observability
+- Performance
+- Governance
+- Innovation
+
+</div>
+</div>
 
 ---
 
