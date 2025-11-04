@@ -347,3 +347,11 @@ updates:
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
   mermaid.initialize({ startOnLoad: true });
 </script>
+
+---
+
+# Thank you!
+
+## Please connect
+
+![bg right fit](./img/chris_ayers.svg)
