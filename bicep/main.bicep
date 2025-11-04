@@ -23,7 +23,7 @@ var environmentConfigurationMap = {
     appServicePlan: {
       sku: {
         name: 'S1'
-        capacity: 1
+        capacity: 2
       }
     }
     storageAccount: {
