@@ -15,7 +15,7 @@ footer: '@Chris_L_Ayers - https://chris-ayers.com'
 ![bg left:40%](./img/portrait.png)
 
 ## Chris Ayers
-### Senior Site Reliability Engineer<br>Microsoft
+### Senior Software Engineer<br>Microsoft
 
 <i class="fa-brands fa-bluesky"></i> BlueSky: [@chris-ayers.com](https://bsky.app/profile/chris-ayers.com)
 <i class="fa-brands fa-linkedin"></i> LinkedIn: - [chris\-l\-ayers](https://linkedin.com/in/chris-l-ayers/)
@@ -173,9 +173,19 @@ Demo: [Online Parser](https://yaml-online-parser.appspot.com/)
 
 <i class="fa-brands fa-github"></i>  [nektos/act](https://github.com/nektos/act)
 
+<i class="fa-brands fa-github"></i>  [SanjulaGanepola/github-local-actions](https://github.com/SanjulaGanepola/github-local-actions)
+
 ![bg right:50% 95%](./img/act-quickstart-2.gif)
 
 <!-- act -W .github/workflows/02-basic-multiple-jobs-needs.yml -->
+
+---
+
+# Workshop repo
+
+### <i class="fa-brands fa-github"></i> [actions-workshop/actions-workshop](https://github.com/actions-workshop/actions-workshop)
+
+![bg right fit](./img/workshop-qr.png)
 
 ---
 
@@ -261,7 +271,7 @@ updates:
 
 ---
 
-# GitHub Well-Architected Framework
+# [GitHub Well-Architected Framework](https://wellarchitected.github.com)
 
 ![bg right fit](img/gh-waf.png)
 
