@@ -50,10 +50,10 @@ jobs:
         shell: perl {0}
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       # Reference a specific commit
-      - uses: actions/checkout@71cf2267d89c5cb81562390fa70a37fa40b1305e
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd
       # Reference the major version of a release
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       # Reference a specific version
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       # Reference a branch
       - uses: actions/checkout@main
