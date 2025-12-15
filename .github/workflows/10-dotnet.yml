@@ -50,13 +50,13 @@ jobs:
         run: dotnet publish -c Release -o ./webapp
 
       - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: webapp
           path: ./dotnet-sample/webapp
 
       - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: iac
           path: ./dotnet-sample/iac
