@@ -15,7 +15,7 @@ footer: '@Chris_L_Ayers - https://chris-ayers.com'
 ![bg left:40%](./img/portrait.png)
 
 ## Chris Ayers
-### Senior Software Engineer<br>Microsoft
+### Principal Software Engineer<br>Microsoft
 
 <i class="fa-brands fa-bluesky"></i> BlueSky: [@chris-ayers.com](https://bsky.app/profile/chris-ayers.com)
 <i class="fa-brands fa-linkedin"></i> LinkedIn: - [chris\-l\-ayers](https://linkedin.com/in/chris-l-ayers/)
