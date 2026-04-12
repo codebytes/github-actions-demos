@@ -1,4 +1,4 @@
-name: 07 Contexts
+name: 07 - Contexts
 on: push
 
 # https://docs.github.com/en/actions/learn-github-actions/contexts

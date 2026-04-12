@@ -1,0 +1,39 @@
+name: 12 - Artifact Attestation
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'node-example/**'
+
+permissions:
+  id-token: write
+  contents: read
+  attestations: write
+
+defaults:
+  run:
+    working-directory: node-example
+
+jobs:
+  build-and-attest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '22.x'
+
+      - name: Install and build
+        run: |
+          npm ci
+          npm run build --if-present
+          npm pack
+
+      - name: Attest build provenance
+        uses: actions/attest-build-provenance@v4
+        with:
+          subject-path: 'node-example/*.tgz'

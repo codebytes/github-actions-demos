@@ -30,7 +30,7 @@ jobs:
         run: mkdir build && cp -R slides/img build/img && cp -R slides/themes build/themes
 
       - name: Marp Build (README)
-        uses: docker://marpteam/marp-cli:latest
+        uses: docker://marpteam/marp-cli:v4.3.1
         with:
           args: --theme-set slides/themes -o build/index.html --html -- slides/Slides.md
         env:

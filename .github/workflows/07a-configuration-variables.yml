@@ -1,4 +1,4 @@
-name: 07b Vars
+name: 07a - Configuration Variables
 
 on:
   workflow_dispatch:
@@ -23,6 +23,6 @@ jobs:
 
       - name: ${{ vars.HELLO_WORLD_STEP }}
         if: ${{ vars.HELLO_WORLD_ENABLED == 'true' }}
-        uses: actions/hello-world-javascript-action@main
+        uses: actions/hello-world-javascript-action@main # ⚠️ unpinned - demo only
         with:
           who-to-greet: ${{ vars.GREET_NAME }}

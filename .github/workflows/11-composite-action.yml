@@ -1,0 +1,32 @@
+name: 11 - Composite Action
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'node-example/**'
+      - '.github/actions/setup-node-project/**'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'node-example/**'
+      - '.github/actions/setup-node-project/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Use our composite action to setup the project
+      - name: Setup Node Project
+        uses: ./.github/actions/setup-node-project
+        with:
+          node-version: '22.x'
+
+      - name: Run tests
+        working-directory: node-example
+        run: npm test
+
+      - name: Build
+        working-directory: node-example
+        run: npm run build --if-present

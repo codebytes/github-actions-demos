@@ -4,7 +4,10 @@
   "description": "a sample package",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
   },
   "keywords": [],
   "author": "Chris Ayers",
