@@ -10,7 +10,7 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/dotnet-sample/bin/Debug/net7.0/dotnet-sample.dll",
+            "program": "${workspaceFolder}/dotnet-sample/src/bin/Debug/net10.0/dotnet-sample.dll",
             "args": [],
             "cwd": "${workspaceFolder}/dotnet-sample",
             "stopAtEntry": false,
