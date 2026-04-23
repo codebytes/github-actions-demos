@@ -1,12 +1,23 @@
 {
   "name": "@codebyte5/node-example",
   "version": "1.0.4",
-  "description": "a sample package",
-  "main": "index.js",
+  "description": "A sample Express API for demonstrating GitHub Actions CI/CD",
+  "main": "src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "start": "node src/server.js",
+    "build": "node -e \"require('./src/app')\" && echo 'Build validation passed'",
+    "test": "jest --ci",
+    "lint": "eslint src/ __tests__/"
   },
   "keywords": [],
   "author": "Chris Ayers",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.14.0",
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  }
 }
