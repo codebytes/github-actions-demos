@@ -42,7 +42,7 @@ jobs:
       - name: Build
         run: dotnet build --no-restore
       - name: Test
-        run: dotnet test --no-build --verbosity normal
+        run: dotnet test --configuration Release --no-build --verbosity normal
 
       - name: dotnet publish
         run: dotnet publish src/dotnet-sample.csproj -c Release -o ./webapp

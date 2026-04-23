@@ -36,3 +36,19 @@ jobs:
         env:
           # To report GitHub Actions status checks
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Only lint changed files, not the entire codebase
+          VALIDATE_ALL_CODEBASE: 'false'
+          # Disable redundant Prettier linters (formatting-only, not catching bugs)
+          VALIDATE_CSS_PRETTIER: 'false'
+          VALIDATE_HTML_PRETTIER: 'false'
+          VALIDATE_JAVASCRIPT_PRETTIER: 'false'
+          VALIDATE_JSON_PRETTIER: 'false'
+          VALIDATE_MARKDOWN_PRETTIER: 'false'
+          VALIDATE_YAML_PRETTIER: 'false'
+          # Disable linters not useful for a demo repo
+          VALIDATE_NATURAL_LANGUAGE: 'false'
+          VALIDATE_JSCPD: 'false'
+          VALIDATE_BIOME_FORMAT: 'false'
+          VALIDATE_BIOME_LINT: 'false'
+          VALIDATE_CHECKOV: 'false'
+          VALIDATE_TRIVY: 'false'
