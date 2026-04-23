@@ -1,0 +1,596 @@
+/* custom-github.css */
+/* @theme custom-github */
+
+@import 'default';
+
+/*
+ * GitHub Primer Design System Theme for Marp
+ * Based on https://primer.style/foundations/color/overview
+ * and https://primer.style/foundations/typography
+ */
+
+:root {
+  /* ===== GitHub Primer Color Palette ===== */
+  
+  /* Neutral Scale (Light) */
+  --gh-neutral-0: #ffffff;
+  --gh-neutral-1: #f6f8fa;
+  --gh-neutral-2: #eff2f5;
+  --gh-neutral-3: #e6eaef;
+  --gh-neutral-4: #e0e6eb;
+  --gh-neutral-5: #dae0e7;
+  --gh-neutral-6: #d1d9e0;
+  --gh-neutral-7: #c8d1da;
+  --gh-neutral-8: #818b98;
+  --gh-neutral-9: #59636e;
+  --gh-neutral-10: #454c54;
+  --gh-neutral-11: #393f46;
+  --gh-neutral-12: #25292e;
+  --gh-neutral-13: #1f2328;
+  
+  /* Blue (Accent) */
+  --gh-blue-0: #ddf4ff;
+  --gh-blue-1: #b6e3ff;
+  --gh-blue-2: #80ccff;
+  --gh-blue-3: #54aeff;
+  --gh-blue-4: #218bff;
+  --gh-blue-5: #0969da;
+  --gh-blue-6: #0550ae;
+  --gh-blue-7: #033d8b;
+  --gh-blue-8: #0a3069;
+  --gh-blue-9: #002155;
+  
+  /* Green (Success) */
+  --gh-green-0: #dafbe1;
+  --gh-green-1: #aceebb;
+  --gh-green-2: #6fdd8b;
+  --gh-green-3: #4ac26b;
+  --gh-green-4: #2da44e;
+  --gh-green-5: #1a7f37;
+  --gh-green-6: #116329;
+  --gh-green-7: #044f1e;
+  --gh-green-8: #003d16;
+  --gh-green-9: #002d11;
+  
+  /* Red (Danger) */
+  --gh-red-0: #ffebe9;
+  --gh-red-1: #ffcecb;
+  --gh-red-2: #ffaba8;
+  --gh-red-3: #ff8182;
+  --gh-red-4: #fa4549;
+  --gh-red-5: #cf222e;
+  --gh-red-6: #a40e26;
+  --gh-red-7: #82071e;
+  --gh-red-8: #660018;
+  --gh-red-9: #4c0014;
+  
+  /* Purple (Done) */
+  --gh-purple-0: #fbefff;
+  --gh-purple-1: #ecd8ff;
+  --gh-purple-2: #d8b9ff;
+  --gh-purple-3: #c297ff;
+  --gh-purple-4: #a475f9;
+  --gh-purple-5: #8250df;
+  --gh-purple-6: #6639ba;
+  --gh-purple-7: #512a97;
+  --gh-purple-8: #3e1f79;
+  --gh-purple-9: #2e1461;
+  
+  /* Orange (Attention) */
+  --gh-orange-0: #fff1e5;
+  --gh-orange-1: #ffd8b5;
+  --gh-orange-2: #ffb77c;
+  --gh-orange-3: #fb8f44;
+  --gh-orange-4: #e16f24;
+  --gh-orange-5: #bc4c00;
+  --gh-orange-6: #953800;
+  --gh-orange-7: #762c00;
+  --gh-orange-8: #5c2200;
+  --gh-orange-9: #471700;
+  
+  /* Yellow (Warning) */
+  --gh-yellow-0: #fff8c5;
+  --gh-yellow-1: #fae17d;
+  --gh-yellow-2: #eac54f;
+  --gh-yellow-3: #d4a72c;
+  --gh-yellow-4: #bf8700;
+  --gh-yellow-5: #9a6700;
+  --gh-yellow-6: #7d4e00;
+  --gh-yellow-7: #633c01;
+  --gh-yellow-8: #4d2d00;
+  --gh-yellow-9: #3b2300;
+  
+  /* Pink (Sponsors) */
+  --gh-pink-0: #ffeff7;
+  --gh-pink-1: #ffd3eb;
+  --gh-pink-2: #ffadda;
+  --gh-pink-3: #ff80c8;
+  --gh-pink-4: #e85aad;
+  --gh-pink-5: #bf3989;
+  --gh-pink-6: #99286e;
+  --gh-pink-7: #772057;
+  --gh-pink-8: #611347;
+  --gh-pink-9: #4d0336;
+  
+  /* Coral */
+  --gh-coral-0: #fff0eb;
+  --gh-coral-1: #ffd6cc;
+  --gh-coral-2: #ffb4a1;
+  --gh-coral-3: #fd8c73;
+  --gh-coral-4: #ec6547;
+  --gh-coral-5: #c4432b;
+  --gh-coral-6: #9e2f1c;
+  --gh-coral-7: #801f0f;
+  --gh-coral-8: #691105;
+  --gh-coral-9: #510901;
+  
+  /* ===== Functional Colors ===== */
+  --gh-fg-default: var(--gh-neutral-13);
+  --gh-fg-muted: var(--gh-neutral-9);
+  --gh-fg-subtle: var(--gh-neutral-8);
+  --gh-fg-on-emphasis: var(--gh-neutral-0);
+  
+  --gh-bg-default: var(--gh-neutral-0);
+  --gh-bg-muted: var(--gh-neutral-1);
+  --gh-bg-subtle: var(--gh-neutral-2);
+  --gh-bg-inset: var(--gh-neutral-1);
+  --gh-bg-emphasis: var(--gh-neutral-13);
+  
+  --gh-border-default: var(--gh-neutral-6);
+  --gh-border-muted: var(--gh-neutral-4);
+  --gh-border-subtle: var(--gh-neutral-3);
+  
+  /* Accent colors */
+  --gh-accent-fg: var(--gh-blue-5);
+  --gh-accent-emphasis: var(--gh-blue-5);
+  --gh-accent-muted: var(--gh-blue-0);
+  
+  --gh-success-fg: var(--gh-green-5);
+  --gh-success-emphasis: var(--gh-green-4);
+  --gh-success-muted: var(--gh-green-0);
+  
+  --gh-danger-fg: var(--gh-red-5);
+  --gh-danger-emphasis: var(--gh-red-5);
+  --gh-danger-muted: var(--gh-red-0);
+  
+  --gh-attention-fg: var(--gh-yellow-5);
+  --gh-attention-emphasis: var(--gh-yellow-4);
+  --gh-attention-muted: var(--gh-yellow-0);
+  
+  --gh-done-fg: var(--gh-purple-5);
+  --gh-done-emphasis: var(--gh-purple-5);
+  --gh-done-muted: var(--gh-purple-0);
+  
+  --gh-sponsors-fg: var(--gh-pink-5);
+  --gh-sponsors-emphasis: var(--gh-pink-5);
+  --gh-sponsors-muted: var(--gh-pink-0);
+  
+  /* ===== Typography ===== */
+  --gh-font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --gh-font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+/* ===== Base Section Styles ===== */
+section {
+  background: var(--gh-bg-default);
+  color: var(--gh-fg-default);
+  font-family: var(--gh-font-sans);
+  font-size: 28px;
+  line-height: 1.5;
+  padding: 40px 60px;
+}
+
+/* ===== Typography Styles ===== */
+section h1 {
+  color: var(--gh-fg-default);
+  font-weight: 600;
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+  border-bottom: 2px solid var(--gh-border-muted);
+  padding-bottom: 0.3em;
+}
+
+section h2 {
+  color: var(--gh-fg-default);
+  font-weight: 600;
+  font-size: 1.75em;
+  margin-bottom: 0.4em;
+}
+
+section h3 {
+  color: var(--gh-fg-muted);
+  font-weight: 600;
+  font-size: 1.25em;
+  margin-bottom: 0.3em;
+}
+
+section h4, section h5, section h6 {
+  color: var(--gh-fg-muted);
+  font-weight: 600;
+}
+
+section p {
+  margin-bottom: 1em;
+}
+
+/* ===== Links ===== */
+section a {
+  color: var(--gh-accent-fg);
+  text-decoration: none;
+}
+
+section a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Code Styles ===== */
+section code {
+  font-family: var(--gh-font-mono);
+  background: var(--gh-bg-muted);
+  color: var(--gh-fg-default);
+  padding: 0.2em 0.4em;
+  border-radius: 6px;
+  font-size: 0.9em;
+}
+
+section pre {
+  background: var(--gh-neutral-13);
+  color: var(--gh-neutral-1);
+  border-radius: 6px;
+  padding: 16px;
+  overflow-x: auto;
+  font-size: 0.85em;
+  box-shadow: 0 1px 0 rgba(31, 35, 40, 0.04);
+}
+
+section pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  font-size: 1em;
+}
+
+/* ===== Lists ===== */
+section ul, section ol {
+  margin-left: 1.5em;
+  margin-bottom: 1em;
+}
+
+section li {
+  margin-bottom: 0.5em;
+}
+
+section ul li::marker {
+  color: var(--gh-accent-fg);
+}
+
+section ol li::marker {
+  color: var(--gh-accent-fg);
+  font-weight: 600;
+}
+
+/* ===== Tables ===== */
+section table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+section table th {
+  background: var(--gh-bg-muted);
+  color: var(--gh-fg-default);
+  font-weight: 600;
+  text-align: left;
+  padding: 12px 16px;
+  border: 1px solid var(--gh-border-default);
+}
+
+section table td {
+  padding: 12px 16px;
+  border: 1px solid var(--gh-border-default);
+  color: var(--gh-fg-default);
+}
+
+section table tr:nth-child(even) {
+  background: var(--gh-bg-subtle);
+}
+
+/* ===== Blockquotes ===== */
+section blockquote {
+  border-left: 4px solid var(--gh-accent-emphasis);
+  background: var(--gh-accent-muted);
+  color: var(--gh-fg-default);
+  padding: 12px 20px;
+  margin: 1em 0;
+  border-radius: 0 6px 6px 0;
+}
+
+/* ===== Horizontal Rule ===== */
+section hr {
+  border: none;
+  border-top: 1px solid var(--gh-border-muted);
+  margin: 1.5em 0;
+}
+
+/* ===== Strong/Emphasis ===== */
+section strong {
+  font-weight: 600;
+  color: var(--gh-fg-default);
+}
+
+section em {
+  font-style: italic;
+}
+
+/* ===== Strikethrough ===== */
+section del {
+  color: var(--gh-fg-muted);
+  text-decoration: line-through;
+}
+
+/* ===== Footer ===== */
+section::after {
+  color: var(--gh-fg-muted);
+  font-size: 0.7em;
+}
+
+/* ===== Header (if used) ===== */
+header {
+  color: var(--gh-fg-muted);
+  font-size: 0.7em;
+}
+
+/* ===== Lead/Invert Classes ===== */
+section.lead {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+section.lead h1 {
+  border-bottom: none;
+  font-size: 3em;
+}
+
+section.invert {
+  background: var(--gh-neutral-13);
+  color: var(--gh-neutral-1);
+}
+
+section.invert h1, 
+section.invert h2, 
+section.invert h3 {
+  color: var(--gh-neutral-0);
+  border-color: var(--gh-neutral-8);
+}
+
+section.invert a {
+  color: var(--gh-blue-3);
+}
+
+section.invert code {
+  background: var(--gh-neutral-11);
+  color: var(--gh-neutral-1);
+}
+
+section.invert pre {
+  background: var(--gh-neutral-12);
+}
+
+section.invert table th {
+  background: var(--gh-neutral-11);
+  border-color: var(--gh-neutral-8);
+  color: var(--gh-neutral-1);
+}
+
+section.invert table td {
+  border-color: var(--gh-neutral-8);
+  color: var(--gh-neutral-1);
+}
+
+section.invert table tr:nth-child(even) {
+  background: var(--gh-neutral-12);
+}
+
+section.invert blockquote {
+  background: rgba(33, 139, 255, 0.15);
+  border-color: var(--gh-blue-4);
+}
+
+/* ===== Accent Backgrounds ===== */
+section.accent {
+  background: var(--gh-accent-emphasis);
+  color: var(--gh-fg-on-emphasis);
+}
+
+section.accent h1, 
+section.accent h2, 
+section.accent h3 {
+  color: var(--gh-fg-on-emphasis);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+section.accent a {
+  color: var(--gh-blue-1);
+}
+
+section.success {
+  background: var(--gh-success-emphasis);
+  color: var(--gh-fg-on-emphasis);
+}
+
+section.success h1, 
+section.success h2, 
+section.success h3 {
+  color: var(--gh-fg-on-emphasis);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ===== Utility Classes ===== */
+
+/* Multi-column layouts */
+.columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.columns3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.columns4 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+/* Image alignment */
+img[alt~="center"] {
+  display: block;
+  margin: 0 auto;
+}
+
+/* GitHub-style labels/badges */
+.label {
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  font-size: 0.75em;
+  font-weight: 600;
+  border-radius: 2em;
+}
+
+.label-accent {
+  background: var(--gh-accent-muted);
+  color: var(--gh-accent-fg);
+}
+
+.label-success {
+  background: var(--gh-success-muted);
+  color: var(--gh-success-fg);
+}
+
+.label-danger {
+  background: var(--gh-danger-muted);
+  color: var(--gh-danger-fg);
+}
+
+.label-attention {
+  background: var(--gh-attention-muted);
+  color: var(--gh-attention-fg);
+}
+
+.label-done {
+  background: var(--gh-done-muted);
+  color: var(--gh-done-fg);
+}
+
+.label-sponsors {
+  background: var(--gh-sponsors-muted);
+  color: var(--gh-sponsors-fg);
+}
+
+/* Text colors */
+.text-accent { color: var(--gh-accent-fg); }
+.text-success { color: var(--gh-success-fg); }
+.text-danger { color: var(--gh-danger-fg); }
+.text-attention { color: var(--gh-attention-fg); }
+.text-done { color: var(--gh-done-fg); }
+.text-sponsors { color: var(--gh-sponsors-fg); }
+.text-muted { color: var(--gh-fg-muted); }
+
+/* Background highlights */
+.bg-muted { background: var(--gh-bg-muted); padding: 1em; border-radius: 6px; }
+.bg-accent { background: var(--gh-accent-muted); padding: 1em; border-radius: 6px; }
+.bg-success { background: var(--gh-success-muted); padding: 1em; border-radius: 6px; }
+.bg-danger { background: var(--gh-danger-muted); padding: 1em; border-radius: 6px; }
+.bg-attention { background: var(--gh-attention-muted); padding: 1em; border-radius: 6px; }
+
+/* Border accents */
+.border-accent {
+  border-left: 4px solid var(--gh-accent-emphasis);
+  padding-left: 1em;
+}
+
+.border-success {
+  border-left: 4px solid var(--gh-success-emphasis);
+  padding-left: 1em;
+}
+
+.border-danger {
+  border-left: 4px solid var(--gh-danger-emphasis);
+  padding-left: 1em;
+}
+
+/* Mermaid diagram sizing */
+svg[id^="mermaid-"] { 
+  max-width: 960px; 
+  max-height: 600px; 
+}
+
+/* ===== Social Media Icons ===== */
+.fa-twitter { color: #1DA1F2; }
+.fa-mastodon { color: var(--gh-purple-5); }
+.fa-linkedin { color: #0A66C2; }
+.fa-window-maximize { color: var(--gh-blue-4); }
+.fa-bluesky { color: #0085FF; }
+.fa-github { color: var(--gh-fg-default); }
+.fa-youtube { color: #FF0000; }
+
+/* Inverted social icons */
+section.invert .fa-github { color: var(--gh-neutral-1); }
+
+/* ===== Font Awesome Import ===== */
+@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css';
+
+/* ===== Special Slide Types ===== */
+
+/* Title slide styling */
+section.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, var(--gh-neutral-13) 0%, var(--gh-neutral-11) 100%);
+  color: var(--gh-neutral-0);
+}
+
+section.title h1 {
+  border: none;
+  font-size: 3.5em;
+  color: var(--gh-neutral-0);
+  margin-bottom: 0.2em;
+}
+
+section.title h2 {
+  color: var(--gh-neutral-5);
+  font-weight: 400;
+  font-size: 1.5em;
+}
+
+/* GitHub gradient background */
+section.gh-gradient {
+  background: linear-gradient(180deg, var(--gh-neutral-13) 0%, #0d1117 100%);
+  color: var(--gh-neutral-0);
+}
+
+section.gh-gradient h1,
+section.gh-gradient h2,
+section.gh-gradient h3 {
+  color: var(--gh-neutral-0);
+  border-color: var(--gh-neutral-8);
+}
+
+/* Contribution graph style background pattern */
+section.contribution-pattern {
+  background-color: var(--gh-bg-default);
+  background-image: 
+    radial-gradient(var(--gh-green-2) 2px, transparent 2px),
+    radial-gradient(var(--gh-green-3) 2px, transparent 2px),
+    radial-gradient(var(--gh-green-4) 2px, transparent 2px);
+  background-size: 20px 20px;
+  background-position: 0 0, 40px 40px, 80px 80px;
+}
