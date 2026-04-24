@@ -33,6 +33,7 @@ footer: '@Chris_L_Ayers - https://chris-ayers.com'
 - GitHub Actions Deep Dive
 - Workflow Syntax & Patterns
 - Security & Supply Chain
+- Agentic Workflows
 - Advanced Topics & Demos
 
 ---
@@ -746,6 +747,134 @@ updates:
 - 🚀 Performance
 - 🏛️ Governance
 - 💡 Innovation
+
+</div>
+</div>
+
+---
+
+<!-- _class: lead -->
+
+# 🤖 Agentic Workflows
+
+<div class="text-muted" style="font-size: 0.8em; margin-bottom: 1em;">
+AI-powered automation with natural language
+</div>
+
+---
+
+## What are Agentic Workflows?
+
+<div class="columns">
+<div>
+
+- **AI-powered** GitHub Actions
+- Write automation in **markdown**
+- Agents **understand context**, make decisions, and act
+- Compiled to hardened `.lock.yml` files
+
+</div>
+<div>
+
+### Traditional vs Agentic
+
+| Traditional | Agentic |
+|---|---|
+| Fixed if-then rules | Natural language |
+| Explicit scripting | Context-aware AI |
+| Brittle to change | Adapts flexibly |
+
+</div>
+</div>
+
+---
+
+## How It Works
+
+![w:1000px center](./img/agentic-workflows.drawio.png)
+
+---
+
+## Workflow Structure
+
+```markdown
+---
+on:
+  issues:
+    types: [opened]
+permissions: read-all
+safe-outputs:
+  add-comment:
+  add-labels:
+    allowed: [bug, feature, question]
+---
+# Issue Triage Agent
+
+Analyze new issues and categorize them
+with the appropriate label.
+```
+
+---
+
+## Key Security Features
+
+<div class="columns">
+<div>
+
+### 🔒 Permissions
+- **Read-only** by default
+- Role-based access (`roles:`)
+- `strict: true` enforced
+
+### ✅ Safe Outputs
+- Validated write operations
+- Scoped to specific actions
+- No direct write access
+
+</div>
+<div>
+
+### 🛡️ Lockdown Mode
+- Custom token required
+- Integrity filtering
+- Bot & role filtering
+
+### 🛠️ Tooling
+- `gh aw compile` - Build & validate
+- `gh aw audit` - Analyze runs
+- `gh aw secrets` - Manage tokens
+
+</div>
+</div>
+
+---
+
+## Example: Issue Triage Agent
+
+<div class="columns">
+<div>
+
+**What it does:**
+- Lists unlabeled issues
+- Analyzes title & body with AI
+- Adds appropriate labels
+- Comments with reasoning
+
+**Triggers:**
+- Schedule (weekday afternoons)
+- Manual dispatch
+
+</div>
+<div>
+
+**Safe outputs:**
+- `add-labels` (scoped allowlist)
+- `add-comment`
+
+**Security:**
+- `strict: true`
+- `lockdown: true`
+- Role-based access
 
 </div>
 </div>

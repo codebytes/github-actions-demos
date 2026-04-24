@@ -1,0 +1,70 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Agentic Workflows" id="agentic-wf">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="600" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <!-- Title -->
+        <mxCell id="title" value="GitHub Agentic Workflows" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=20;fontStyle=1;fontColor=#24292f;" vertex="1" parent="1">
+          <mxGeometry x="350" y="10" width="400" height="40" as="geometry" />
+        </mxCell>
+        <!-- Markdown file -->
+        <mxCell id="md" value="&lt;b&gt;workflow.md&lt;/b&gt;&lt;br&gt;&lt;font size='1'&gt;Natural language&lt;br&gt;instructions + YAML&lt;br&gt;frontmatter&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;arcSize=20;" vertex="1" parent="1">
+          <mxGeometry x="40" y="100" width="160" height="80" as="geometry" />
+        </mxCell>
+        <!-- Compile -->
+        <mxCell id="compile" value="&lt;b&gt;gh aw compile&lt;/b&gt;&lt;br&gt;&lt;font size='1'&gt;Validates, hardens,&lt;br&gt;generates lock file&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;arcSize=20;" vertex="1" parent="1">
+          <mxGeometry x="280" y="100" width="160" height="80" as="geometry" />
+        </mxCell>
+        <!-- Lock file -->
+        <mxCell id="lock" value="&lt;b&gt;.lock.yml&lt;/b&gt;&lt;br&gt;&lt;font size='1'&gt;Hardened Actions&lt;br&gt;workflow (SHA-pinned)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;arcSize=20;" vertex="1" parent="1">
+          <mxGeometry x="520" y="100" width="160" height="80" as="geometry" />
+        </mxCell>
+        <!-- GitHub Actions -->
+        <mxCell id="actions" value="&lt;b&gt;GitHub Actions&lt;/b&gt;&lt;br&gt;&lt;font size='1'&gt;Trigger → Activate →&lt;br&gt;Run AI Agent&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;arcSize=20;" vertex="1" parent="1">
+          <mxGeometry x="760" y="100" width="160" height="80" as="geometry" />
+        </mxCell>
+        <!-- Arrows top row -->
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#24292f;strokeWidth=2;" edge="1" parent="1" source="md" target="compile">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#24292f;strokeWidth=2;" edge="1" parent="1" source="compile" target="lock">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#24292f;strokeWidth=2;" edge="1" parent="1" source="lock" target="actions">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- Bottom row: Security features -->
+        <mxCell id="perms" value="&lt;b&gt;🔒 Permissions&lt;/b&gt;&lt;br&gt;&lt;font size='1'&gt;Read-only by default&lt;br&gt;Role-based access&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;arcSize=20;" vertex="1" parent="1">
+          <mxGeometry x="100" y="280" width="150" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="safe" value="&lt;b&gt;✅ Safe Outputs&lt;/b&gt;&lt;br&gt;&lt;font size='1'&gt;Validated write ops&lt;br&gt;(comments, labels, PRs)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;arcSize=20;" vertex="1" parent="1">
+          <mxGeometry x="310" y="280" width="150" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="tools" value="&lt;b&gt;🛠️ Tools&lt;/b&gt;&lt;br&gt;&lt;font size='1'&gt;GitHub MCP, bash,&lt;br&gt;network firewall&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;arcSize=20;" vertex="1" parent="1">
+          <mxGeometry x="520" y="280" width="150" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="engine" value="&lt;b&gt;🤖 AI Engine&lt;/b&gt;&lt;br&gt;&lt;font size='1'&gt;Copilot CLI, Claude,&lt;br&gt;Codex&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;arcSize=20;" vertex="1" parent="1">
+          <mxGeometry x="730" y="280" width="150" height="70" as="geometry" />
+        </mxCell>
+        <!-- Security label -->
+        <mxCell id="seclabel" value="Security &amp; Governance Layer" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=13;fontStyle=5;fontColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="350" y="240" width="280" height="30" as="geometry" />
+        </mxCell>
+        <!-- Arrows from Actions to bottom -->
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#82b366;strokeWidth=1;dashed=1;" edge="1" parent="1" source="actions" target="perms">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#82b366;strokeWidth=1;dashed=1;" edge="1" parent="1" source="actions" target="safe">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#82b366;strokeWidth=1;dashed=1;" edge="1" parent="1" source="actions" target="tools">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#82b366;strokeWidth=1;dashed=1;" edge="1" parent="1" source="actions" target="engine">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
