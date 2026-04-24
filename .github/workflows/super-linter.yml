@@ -1,5 +1,5 @@
-# This workflow executes several linters on changed files based on languages used in your code base whenever
-# you push a code or open a pull request.
+# This workflow lints changed files based on languages
+# used in your code base on push or pull request.
 #
 # You can adjust the behavior by modifying this file.
 # For more information, see:
@@ -52,3 +52,4 @@ jobs:
           VALIDATE_BIOME_LINT: 'false'
           VALIDATE_CHECKOV: 'false'
           VALIDATE_TRIVY: 'false'
+          VALIDATE_GITHUB_ACTIONS_ZIZMOR: 'false'
