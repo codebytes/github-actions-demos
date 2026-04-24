@@ -26,18 +26,6 @@ footer: '@Chris_L_Ayers - https://chris-ayers.com'
 
 ---
 
-![bg left fit](./img/bg.png)
-
-# Agenda
-- YAML & CI/CD Overview
-- GitHub Actions Deep Dive
-- Workflow Patterns & Real-World Pipelines
-- Reusable Workflows & Composite Actions
-- Security & Supply Chain
-- Agentic Workflows
-
----
-
 <div class="columns">
 <div>
 
