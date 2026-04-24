@@ -250,6 +250,23 @@ section pre code {
   font-size: 1em;
 }
 
+/* ===== Syntax Highlighting (dark bg code blocks) ===== */
+section pre code span.hljs-attr,
+section pre code span.hljs-attribute { color: #79c0ff; }
+section pre code span.hljs-string,
+section pre code span.hljs-meta { color: #a5d6ff; }
+section pre code span.hljs-keyword,
+section pre code span.hljs-selector-tag { color: #ff7b72; }
+section pre code span.hljs-number,
+section pre code span.hljs-literal { color: #79c0ff; }
+section pre code span.hljs-comment { color: #8b949e; }
+section pre code span.hljs-built_in,
+section pre code span.hljs-type { color: #ffa657; }
+section pre code span.hljs-name,
+section pre code span.hljs-tag { color: #7ee787; }
+section pre code span.hljs-bullet { color: #f2cc60; }
+section pre code span.hljs-symbol { color: #d2a8ff; }
+
 /* ===== Lists ===== */
 section ul, section ol {
   margin-left: 1.5em;

@@ -26,18 +26,6 @@ footer: '@Chris_L_Ayers - https://chris-ayers.com'
 
 ---
 
-![bg left fit](./img/bg.png)
-
-# Agenda
-- YAML & CI/CD Overview
-- GitHub Actions Deep Dive
-- Workflow Syntax & Patterns
-- Security & Supply Chain
-- Agentic Workflows
-- Advanced Topics & Demos
-
----
-
 <div class="columns">
 <div>
 
@@ -189,6 +177,112 @@ a { font-size: 90%; }
 
 ---
 
+# Steps
+
+<style scoped>
+pre { font-size: 66%; line-height: 1.3; }
+h3 { margin-bottom: 0.15em; }
+</style>
+
+<div class="columns">
+<div>
+
+### `run:` — Shell commands
+```yaml
+steps:
+  - name: Single line
+    run: echo "Hello"
+
+  - name: Multi-line
+    run: |
+      echo "Building..."
+      npm ci
+      npm run build
+
+  - name: Use a different shell
+    run: Get-Process
+    shell: pwsh
+```
+
+</div>
+<div>
+
+### `uses:` — Actions
+```yaml
+steps:
+  - uses: actions/checkout@v4
+
+  - uses: actions/setup-node@v4
+    with:
+      node-version: 20
+      cache: 'npm'
+
+  - name: Step with output
+    id: version
+    run: echo "tag=v1.0" >>
+         $GITHUB_OUTPUT
+
+  - run: echo ${{ steps.version
+         .outputs.tag }}
+```
+
+</div>
+</div>
+
+---
+
+# Job Dependencies & Outputs
+
+<style scoped>
+pre { font-size: 66%; line-height: 1.3; }
+h3 { margin-bottom: 0.2em; }
+</style>
+
+<div class="columns">
+<div>
+
+### `needs:` — Sequencing jobs
+```yaml
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps: [...]
+
+  test:
+    needs: build  # waits for build
+    runs-on: ubuntu-latest
+    steps: [...]
+
+  deploy:
+    needs: [build, test]
+    runs-on: ubuntu-latest
+```
+
+</div>
+<div>
+
+### Passing data between jobs
+```yaml
+jobs:
+  version:
+    outputs:
+      tag: ${{ steps.v.outputs.tag }}
+    steps:
+      - id: v
+        run: echo "tag=v1.2.3" >>
+             $GITHUB_OUTPUT
+  deploy:
+    needs: version
+    steps:
+      - run: echo ${{ needs
+             .version.outputs.tag }}
+```
+
+</div>
+</div>
+
+---
+
 # Runners
 
 - Specify the type of runner with `runs-on` (e.g., `ubuntu-latest`).
@@ -241,6 +335,45 @@ jobs:
 | `secrets.*` | `secrets.API_KEY` |
 | `runner.*` | `runner.os` |
 | `matrix.*` | `matrix.node-version` |
+
+</div>
+</div>
+
+---
+
+# Path Filters & Concurrency
+
+<div class="columns">
+<div>
+
+### 📂 Path Filters — Monorepo support
+```yaml
+on:
+  push:
+    paths:
+      - 'src/**'
+      - 'package.json'
+    paths-ignore:
+      - 'docs/**'
+      - '*.md'
+```
+
+Only triggers when relevant files change
+
+</div>
+<div>
+
+### 🔁 Concurrency — Avoid duplicate runs
+```yaml
+concurrency:
+  group: ${{ github.workflow }}-
+    ${{ github.ref }}
+  cancel-in-progress: true
+```
+
+✅ Cancels stale PR runs
+✅ Saves runner minutes
+✅ Ensures only latest commit deploys
 
 </div>
 </div>
@@ -361,52 +494,65 @@ Default token is scoped per-repo
 
 ---
 
-# Job Dependencies & Outputs
+# Real-World Pipeline — .NET CI/CD
 
 <style scoped>
-pre { font-size: 66%; line-height: 1.3; }
-h3 { margin-bottom: 0.2em; }
+pre { font-size: 56%; line-height: 1.2; }
+li { font-size: 82%; margin: 0.1em 0; }
+h3 { margin-bottom: 0.1em; }
 </style>
 
 <div class="columns">
 <div>
 
-### `needs:` — Sequencing jobs
+### Build, Test & Publish
 ```yaml
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps: [...]
-
-  test:
-    needs: build  # waits for build
-    runs-on: ubuntu-latest
-    steps: [...]
-
-  deploy:
-    needs: [build, test]
-    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - run: dotnet restore
+      - run: dotnet build -c Release
+      - run: dotnet test -c Release
+      - run: dotnet publish -c Release
+             -o ./webapp
+      - uses: actions/upload-artifact@v4
+        with:
+          name: webapp
+          path: ./webapp
 ```
 
 </div>
 <div>
 
-### Passing data between jobs
+### Deploy to Azure
 ```yaml
-jobs:
-  version:
-    outputs:
-      tag: ${{ steps.v.outputs.tag }}
-    steps:
-      - id: v
-        run: echo "tag=v1.2.3" >>
-             $GITHUB_OUTPUT
   deploy:
-    needs: version
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://myapp.azurewebsites.net
     steps:
-      - run: echo ${{ needs
-             .version.outputs.tag }}
+      - uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.
+            AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.
+            AZURE_TENANT_ID }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: webapp
+      - uses: azure/webapps-deploy@v3
+        with:
+          app-name: myapp
 ```
+
+📂 Demo: `10-dotnet.yml`
 
 </div>
 </div>
@@ -542,6 +688,44 @@ Used in workflows:
 
 ---
 
+## Composite Actions vs Reusable Workflows
+
+<style scoped>
+li { font-size: 80%; margin: 0.15em 0; line-height: 1.3; }
+th, td { font-size: 75%; padding: 6px 10px; }
+h2 { font-size: 1.5em; margin-bottom: 0.3em; }
+</style>
+
+| | 🧩 Composite Action | 🔄 Reusable Workflow |
+|---|---|---|
+| **Scope** | Runs as a **step** inside a job | Runs as an entire **job** (or jobs) |
+| **Location** | `action.yml` in any directory | Must be in `.github/workflows/` |
+| **Sharing** | Can publish to Marketplace | Shared via `workflow_call` trigger |
+| **Secrets** | Inherits caller's context | Must be passed explicitly (or `inherit`) |
+| **Runners** | Uses the **caller's** runner | Can specify its **own** runner |
+| **Outputs** | Step-level outputs | Job-level outputs |
+
+<div class="columns">
+<div>
+
+**✅ Use Composite Actions for:**
+- Bundling related steps (setup, lint)
+- Reusable across many workflows
+- Publishing to the Marketplace
+
+</div>
+<div>
+
+**✅ Use Reusable Workflows for:**
+- Complete CI/CD pipelines
+- Multi-job orchestration
+- Enforcing org-wide standards
+
+</div>
+</div>
+
+---
+
 # Environments & Deployment
 
 <style scoped>
@@ -590,45 +774,6 @@ steps:
       subscription-id: ${{ secrets.
         AZURE_SUBSCRIPTION_ID }}
 ```
-
-</div>
-</div>
-
----
-
-# Path Filters & Concurrency
-
-<div class="columns">
-<div>
-
-### 📂 Path Filters — Monorepo support
-```yaml
-on:
-  push:
-    paths:
-      - 'src/**'
-      - 'package.json'
-    paths-ignore:
-      - 'docs/**'
-      - '*.md'
-```
-
-Only triggers when relevant files change
-
-</div>
-<div>
-
-### 🔁 Concurrency — Avoid duplicate runs
-```yaml
-concurrency:
-  group: ${{ github.workflow }}-
-    ${{ github.ref }}
-  cancel-in-progress: true
-```
-
-✅ Cancels stale PR runs
-✅ Saves runner minutes
-✅ Ensures only latest commit deploys
 
 </div>
 </div>
@@ -797,26 +942,65 @@ AI-powered automation with natural language
 
 ## Workflow Structure
 
-```markdown
+<style scoped>
+pre { font-size: 60%; line-height: 1.25; }
+h3 { margin-bottom: 0.1em; }
+</style>
+
+<div class="columns">
+<div>
+
+### Frontmatter (YAML config)
+```yaml
 ---
 on:
   issues:
     types: [opened]
 permissions: read-all
+tools:
+  github:
+    toolsets: [issues, labels]
 safe-outputs:
   add-comment:
   add-labels:
     allowed: [bug, feature, question]
 ---
+```
+
+</div>
+<div>
+
+### Body (natural language instructions)
+```markdown
 # Issue Triage Agent
 
-Analyze new issues and categorize them
-with the appropriate label.
+Analyze new issues and categorize
+them with the appropriate label.
+
+Skip issues that:
+- Already have labels
+- Have been assigned to a user
+
+After adding a label, comment
+mentioning the author with your
+reasoning.
 ```
+
+📝 The AI agent reads and executes
+these instructions at runtime
+
+</div>
+</div>
 
 ---
 
 ## Key Security Features
+
+<style scoped>
+li { font-size: 80%; margin: 0.1em 0; line-height: 1.3; }
+h3 { margin-bottom: 0.1em; font-size: 1.1em; }
+h2 { margin-bottom: 0.2em; }
+</style>
 
 <div class="columns">
 <div>
@@ -829,7 +1013,6 @@ with the appropriate label.
 ### ✅ Safe Outputs
 - Validated write operations
 - Scoped to specific actions
-- No direct write access
 
 </div>
 <div>
@@ -840,9 +1023,9 @@ with the appropriate label.
 - Bot & role filtering
 
 ### 🛠️ Tooling
-- `gh aw compile` - Build & validate
-- `gh aw audit` - Analyze runs
-- `gh aw secrets` - Manage tokens
+- `gh aw compile` — Build & validate
+- `gh aw audit` — Analyze runs
+- `gh aw secrets` — Manage tokens
 
 </div>
 </div>
@@ -897,7 +1080,9 @@ with the appropriate label.
 - [https://docs.github.com](https://docs.github.com)
 - [https://skills.github.com](https://skills.github.com)
 - [codebytes/github-actions-demos](https://github.com/codebytes/github-actions-demos)
-- [https://learn.microsoft.com/en-us/training/paths/automate-workflow-github-actions/](https://learn.microsoft.com/en-us/training/paths/automate-workflow-github-actions/)
+- [Agentic Workflows Docs](https://github.github.com/gh-aw/)
+- [Agentics Collection](https://github.com/githubnext/agentics)
+- [Learn: Automate with Actions](https://learn.microsoft.com/en-us/training/paths/automate-workflow-github-actions/)
 </div>
 <div>
 
