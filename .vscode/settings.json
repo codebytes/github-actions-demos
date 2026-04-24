@@ -9,5 +9,13 @@
         "marp",
         "nektos",
         "yzhang"
+    ],
+    "markdown.marp.themes": [
+        "./slides/themes/custom-github.css",
+        "./slides/themes/custom-github-dark.css",
+        "./slides/themes/custom-default.css"
+    ],
+    "markdown.styles": [
+        ".slides\\\\themes\\\\custom-github.css"
     ]
 }

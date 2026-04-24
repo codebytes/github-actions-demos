@@ -5,17 +5,15 @@ on:
   push:
     branches: [main]
     paths:
-      - '!**'
       - 'container-example/**'
   pull_request:
     branches: [main]
     paths:
-      - '!**'
       - 'container-example/**'
 
 defaults:
   run:
-    working-directory: containers-example
+    working-directory: container-example
 
 jobs:
   build:
