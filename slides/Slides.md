@@ -996,6 +996,12 @@ these instructions at runtime
 
 ## Key Security Features
 
+<style scoped>
+li { font-size: 80%; margin: 0.1em 0; line-height: 1.3; }
+h3 { margin-bottom: 0.1em; font-size: 1.1em; }
+h2 { margin-bottom: 0.2em; }
+</style>
+
 <div class="columns">
 <div>
 
@@ -1007,7 +1013,6 @@ these instructions at runtime
 ### ✅ Safe Outputs
 - Validated write operations
 - Scoped to specific actions
-- No direct write access
 
 </div>
 <div>
@@ -1018,9 +1023,9 @@ these instructions at runtime
 - Bot & role filtering
 
 ### 🛠️ Tooling
-- `gh aw compile` - Build & validate
-- `gh aw audit` - Analyze runs
-- `gh aw secrets` - Manage tokens
+- `gh aw compile` — Build & validate
+- `gh aw audit` — Analyze runs
+- `gh aw secrets` — Manage tokens
 
 </div>
 </div>
