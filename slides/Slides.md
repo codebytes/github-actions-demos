@@ -542,6 +542,44 @@ Used in workflows:
 
 ---
 
+## Composite Actions vs Reusable Workflows
+
+<style scoped>
+li { font-size: 80%; margin: 0.15em 0; line-height: 1.3; }
+th, td { font-size: 75%; padding: 6px 10px; }
+h2 { font-size: 1.5em; margin-bottom: 0.3em; }
+</style>
+
+| | 🧩 Composite Action | 🔄 Reusable Workflow |
+|---|---|---|
+| **Scope** | Runs as a **step** inside a job | Runs as an entire **job** (or jobs) |
+| **Location** | `action.yml` in any directory | Must be in `.github/workflows/` |
+| **Sharing** | Can publish to Marketplace | Shared via `workflow_call` trigger |
+| **Secrets** | Inherits caller's context | Must be passed explicitly (or `inherit`) |
+| **Runners** | Uses the **caller's** runner | Can specify its **own** runner |
+| **Outputs** | Step-level outputs | Job-level outputs |
+
+<div class="columns">
+<div>
+
+**✅ Use Composite Actions for:**
+- Bundling related steps (setup, lint)
+- Reusable across many workflows
+- Publishing to the Marketplace
+
+</div>
+<div>
+
+**✅ Use Reusable Workflows for:**
+- Complete CI/CD pipelines
+- Multi-job orchestration
+- Enforcing org-wide standards
+
+</div>
+</div>
+
+---
+
 # Environments & Deployment
 
 <style scoped>
