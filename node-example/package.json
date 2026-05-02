@@ -16,7 +16,7 @@
     "express": "^5.2.1"
   },
   "devDependencies": {
-    "eslint": "^10.2.1",
+    "eslint": "^10.3.0",
     "jest": "^30.3.0",
     "supertest": "^7.0.0"
   }
