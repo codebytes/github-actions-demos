@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MessagePack" Version="2.5.301" />
     <ProjectReference Include="..\aspire-sample.ApiService\aspire-sample.ApiService.csproj" />
     <ProjectReference Include="..\aspire-sample.Web\aspire-sample.Web.csproj" />
   </ItemGroup>
