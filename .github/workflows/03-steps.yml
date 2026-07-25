@@ -50,11 +50,11 @@ jobs:
         shell: perl {0}
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       # Reference a specific commit (most secure — immutable)
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       # Reference the major version of a release
-      - uses: actions/checkout@v7.0.0
+      - uses: actions/checkout@v7.0.1
       # Reference a specific version
-      - uses: actions/checkout@v7.0.0
+      - uses: actions/checkout@v7.0.1
       # ⚠️ INSECURE — branch refs are mutable and vulnerable to supply chain attacks
       # Reference a branch (demo only — do NOT use in production workflows)
       - uses: actions/checkout@main
