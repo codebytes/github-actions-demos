@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "eslint": "^10.8.0",
-    "jest": "^30.4.2",
+    "jest": "^30.5.1",
     "supertest": "^7.0.0"
   }
 }
