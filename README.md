@@ -19,6 +19,8 @@ Resources and demos for Chris Ayers' talk "CI/CD with GitHub Actions", showcasin
 
 **Chris Ayers**, Principal Software Engineer
 
+Azure EngOps AzRel
+
 [Blog](https://chris-ayers.com/) | [GitHub](https://github.com/codebytes) | [LinkedIn](https://linkedin.com/in/chris-l-ayers/) | [Bluesky](https://bsky.app/profile/chris-ayers.com) | [Mastodon](https://hachyderm.io/@Chrisayers)
 
 ## License
