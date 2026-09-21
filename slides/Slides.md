@@ -15,7 +15,7 @@ footer: '@Chris_L_Ayers - https://chris-ayers.com'
 ![bg left:40%](./img/portrait.png)
 
 ## Chris Ayers
-### Principal Software Engineer<br>Microsoft
+### Principal Software Engineer<br>Azure EngOps AzRel<br>Microsoft
 
 <i class="fa-brands fa-bluesky"></i> BlueSky: [@chris-ayers.com](https://bsky.app/profile/chris-ayers.com)
 <i class="fa-brands fa-linkedin"></i> LinkedIn: - [chris\-l\-ayers](https://linkedin.com/in/chris-l-ayers/)
@@ -305,6 +305,10 @@ jobs:
 
 # Environment Variables & Contexts
 
+<style scoped>
+th, td { padding: 6px 12px; }
+</style>
+
 <div class="columns">
 <div>
 
@@ -386,6 +390,8 @@ concurrency:
 pre { font-size: 68%; line-height: 1.35; }
 h3 { margin-bottom: 0.2em; }
 table { font-size: 78%; }
+th, td { padding: 6px 12px; }
+pre code span.hljs-template-variable { color: #ffa657; }
 </style>
 
 <div class="columns">
@@ -497,13 +503,11 @@ Default token is scoped per-repo
 # Real-World Pipeline — .NET CI/CD
 
 <style scoped>
-pre { font-size: 56%; line-height: 1.2; }
-li { font-size: 82%; margin: 0.1em 0; }
-h3 { margin-bottom: 0.1em; }
+pre { font-size: 72%; line-height: 1.1; margin: 0; }
+h1 { font-size: 1.6em; margin: 0 0 0.2em; padding-bottom: 0.15em; }
+h3 { margin: 0 0 0.2em; }
+p { font-size: 85%; margin: 0.2em 0; }
 </style>
-
-<div class="columns">
-<div>
 
 ### Build, Test & Publish
 ```yaml
@@ -526,8 +530,16 @@ jobs:
           path: ./webapp
 ```
 
-</div>
-<div>
+---
+
+# Real-World Pipeline — .NET CI/CD
+
+<style scoped>
+pre { font-size: 72%; line-height: 1.1; margin: 0; }
+h1 { font-size: 1.6em; margin: 0 0 0.2em; padding-bottom: 0.15em; }
+h3 { margin: 0 0 0.2em; }
+p { font-size: 85%; margin: 0.2em 0; }
+</style>
 
 ### Deploy to Azure
 ```yaml
@@ -553,9 +565,6 @@ jobs:
 ```
 
 📂 Demo: `10-dotnet.yml`
-
-</div>
-</div>
 
 ---
 
@@ -944,6 +953,7 @@ AI-powered automation with natural language
 
 <style scoped>
 pre { font-size: 60%; line-height: 1.25; }
+pre code span.hljs-section { color: #79c0ff; }
 h3 { margin-bottom: 0.1em; }
 </style>
 
@@ -1065,6 +1075,15 @@ h2 { margin-bottom: 0.2em; }
 ---
 
 # Questions
+
+<style scoped>
+footer {
+  color: var(--gh-fg-default);
+  background: var(--gh-bg-default);
+  padding: 0.2em 0.5em;
+  border-radius: 4px;
+}
+</style>
 
 ![bg](./img/owl.png)
 
