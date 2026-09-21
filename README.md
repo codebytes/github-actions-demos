@@ -1,32 +1,25 @@
 # CI/CD with GitHub Actions
 
-This repository contains resources and demos for the talk "CI/CD with GitHub Actions" by Chris Ayers.
+Resources and demos for Chris Ayers' talk "CI/CD with GitHub Actions", showcasing workflows and pipelines across multiple scenarios.
 
 ## Slides
 
-The slides for the talk can be found at:\
-[https://chris-ayers.com/github-actions-demos/](https://chris-ayers.com/github-actions-demos/)
-
-## Repository Content
-
-This repository contains multiple demos and pipelines showcasing the use of GitHub Actions in various scenarios.
+[View HTML slides](https://chris-ayers.com/github-actions-demos/) | [Download PDF](https://chris-ayers.com/github-actions-demos/Slides.pdf)
 
 ## Resources
 
+- [Slide source](slides/Slides.md)
+- [Example workflows](.github/workflows)
+- [Workshop agenda and resources](slides/workshop.md)
 - [GitHub Actions Documentation](https://docs.github.com)
 - [GitHub Skills](https://skills.github.com)
 - [nektos/act - Run Actions Locally](https://github.com/nektos/act)
 
+## Contact
 
-## Connect with Chris Ayers
+**Chris Ayers**, Principal Software Engineer
 
-Feel free to connect with Chris Ayers on social media and visit his blog for more information on Bicep and other topics:
-
-- Twitter: [@Chris_L_Ayers](https://twitter.com/Chris_L_Ayers)
-- Mastodon: [@Chrisayers@hachyderm.io](https://hachyderm.io/@Chrisayers)
-- LinkedIn: [chris-l-ayers](https://linkedin.com/in/chris-l-ayers/)
-- Blog: [https://chris-ayers.com/](https://chris-ayers.com/)
-- GitHub: [Codebytes](https://github.com/codebytes)
+[Blog](https://chris-ayers.com/) | [GitHub](https://github.com/codebytes) | [LinkedIn](https://linkedin.com/in/chris-l-ayers/) | [Bluesky](https://bsky.app/profile/chris-ayers.com) | [Mastodon](https://hachyderm.io/@Chrisayers)
 
 ## License
 
