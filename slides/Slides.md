@@ -181,13 +181,13 @@ a { font-size: 90%; }
 
 <style scoped>
 pre { font-size: 66%; line-height: 1.3; }
-h3 { margin-bottom: 0.15em; }
+h2 { color: var(--gh-fg-muted); font-size: 1.25em; margin-bottom: 0.15em; padding-bottom: 0; }
 </style>
 
 <div class="columns">
 <div>
 
-### `run:` — Shell commands
+## `run:` — Shell commands
 ```yaml
 steps:
   - name: Single line
@@ -207,7 +207,7 @@ steps:
 </div>
 <div>
 
-### `uses:` — Actions
+## `uses:` — Actions
 ```yaml
 steps:
   - uses: actions/checkout@v4
@@ -235,13 +235,13 @@ steps:
 
 <style scoped>
 pre { font-size: 66%; line-height: 1.3; }
-h3 { margin-bottom: 0.2em; }
+h2 { color: var(--gh-fg-muted); font-size: 1.25em; margin-bottom: 0.2em; padding-bottom: 0; }
 </style>
 
 <div class="columns">
 <div>
 
-### `needs:` — Sequencing jobs
+## `needs:` — Sequencing jobs
 ```yaml
 jobs:
   build:
@@ -261,7 +261,7 @@ jobs:
 </div>
 <div>
 
-### Passing data between jobs
+## Passing data between jobs
 ```yaml
 jobs:
   version:
@@ -347,10 +347,14 @@ jobs:
 
 # Path Filters & Concurrency
 
+<style scoped>
+h2 { color: var(--gh-fg-muted); font-size: 1.25em; margin-bottom: 0.3em; padding-bottom: 0; }
+</style>
+
 <div class="columns">
 <div>
 
-### 📂 Path Filters — Monorepo support
+## 📂 Path Filters — Monorepo support
 ```yaml
 on:
   push:
@@ -367,7 +371,7 @@ Only triggers when relevant files change
 </div>
 <div>
 
-### 🔁 Concurrency — Avoid duplicate runs
+## 🔁 Concurrency — Avoid duplicate runs
 ```yaml
 concurrency:
   group: ${{ github.workflow }}-
@@ -388,7 +392,7 @@ concurrency:
 
 <style scoped>
 pre { font-size: 68%; line-height: 1.35; }
-h3 { margin-bottom: 0.2em; }
+h2 { color: var(--gh-fg-muted); font-size: 1.25em; margin-bottom: 0.2em; padding-bottom: 0; }
 table { font-size: 78%; }
 th, td { padding: 6px 12px; }
 pre code span.hljs-template-variable { color: #ffa657; }
@@ -397,7 +401,7 @@ pre code span.hljs-template-variable { color: #ffa657; }
 <div class="columns">
 <div>
 
-### Expressions `${{ }}`
+## Expressions `${{ }}`
 
 ```yaml
 steps:
@@ -417,7 +421,7 @@ steps:
 </div>
 <div>
 
-### Common Functions
+## Common Functions
 
 | Function | Use |
 |----------|-----|
@@ -466,10 +470,14 @@ jobs:
 
 # Secrets & Permissions
 
+<style scoped>
+h2 { color: var(--gh-fg-muted); font-size: 1.25em; margin-bottom: 0.3em; padding-bottom: 0; }
+</style>
+
 <div class="columns">
 <div>
 
-### Using Secrets
+## Using Secrets
 ```yaml
 steps:
   - name: Deploy
@@ -484,7 +492,7 @@ steps:
 </div>
 <div>
 
-### GITHUB_TOKEN Permissions
+## GITHUB_TOKEN Permissions
 ```yaml
 permissions:
   contents: read
@@ -505,11 +513,11 @@ Default token is scoped per-repo
 <style scoped>
 pre { font-size: 72%; line-height: 1.1; margin: 0; }
 h1 { font-size: 1.6em; margin: 0 0 0.2em; padding-bottom: 0.15em; }
-h3 { margin: 0 0 0.2em; }
+h2 { color: var(--gh-fg-muted); font-size: 1.25em; margin: 0 0 0.2em; padding-bottom: 0; }
 p { font-size: 85%; margin: 0.2em 0; }
 </style>
 
-### Build, Test & Publish
+## Build, Test & Publish
 ```yaml
 jobs:
   build:
@@ -537,11 +545,11 @@ jobs:
 <style scoped>
 pre { font-size: 72%; line-height: 1.1; margin: 0; }
 h1 { font-size: 1.6em; margin: 0 0 0.2em; padding-bottom: 0.15em; }
-h3 { margin: 0 0 0.2em; }
+h2 { color: var(--gh-fg-muted); font-size: 1.25em; margin: 0 0 0.2em; padding-bottom: 0; }
 p { font-size: 85%; margin: 0.2em 0; }
 </style>
 
-### Deploy to Azure
+## Deploy to Azure
 ```yaml
   deploy:
     needs: build
@@ -572,14 +580,14 @@ p { font-size: 85%; margin: 0.2em 0; }
 
 <style scoped>
 pre { font-size: 68%; line-height: 1.3; }
-h3 { margin-bottom: 0.2em; }
+h2 { color: var(--gh-fg-muted); font-size: 1.25em; margin-bottom: 0.2em; padding-bottom: 0; }
 p { font-size: 88%; margin: 0.2em 0; }
 </style>
 
 <div class="columns">
 <div>
 
-### 📦 Artifacts — Share between jobs
+## 📦 Artifacts — Share between jobs
 ```yaml
 - uses: actions/upload-artifact@v4
   with:
@@ -595,7 +603,7 @@ p { font-size: 88%; margin: 0.2em 0; }
 </div>
 <div>
 
-### ⚡ Caching — Speed up builds
+## ⚡ Caching — Speed up builds
 ```yaml
 - uses: actions/setup-node@v4
   with:
@@ -641,7 +649,7 @@ Or manual cache control:
 
 <style scoped>
 pre { font-size: 54%; line-height: 1.15; }
-h3 { margin-bottom: 0.1em; }
+h2 { color: var(--gh-fg-muted); font-size: 1.25em; margin-bottom: 0.1em; padding-bottom: 0; }
 p { font-size: 78%; margin: 0.1em 0; }
 h1 { font-size: 1.6em; margin-bottom: 0.1em; }
 </style>
@@ -649,7 +657,7 @@ h1 { font-size: 1.6em; margin-bottom: 0.1em; }
 <div class="columns">
 <div>
 
-### 🔄 Reusable Workflows
+## 🔄 Reusable Workflows
 ```yaml
 # .github/workflows/ci.yml
 on:
@@ -672,7 +680,7 @@ jobs:
 </div>
 <div>
 
-### 🧩 Composite Actions
+## 🧩 Composite Actions
 ```yaml
 # .github/actions/setup/action.yml
 name: 'Project Setup'
@@ -739,7 +747,7 @@ h2 { font-size: 1.5em; margin-bottom: 0.3em; }
 
 <style scoped>
 pre { font-size: 64%; line-height: 1.25; }
-h3 { margin-bottom: 0.15em; }
+h2 { color: var(--gh-fg-muted); font-size: 1.25em; margin-bottom: 0.15em; padding-bottom: 0; }
 li { font-size: 88%; margin: 0.1em 0; }
 p { font-size: 85%; margin: 0.15em 0; }
 </style>
@@ -747,7 +755,7 @@ p { font-size: 85%; margin: 0.15em 0; }
 <div class="columns">
 <div>
 
-### 🌍 Environments
+## 🌍 Environments
 - **Protection rules** — require approvals
 - **Wait timers** — delay before deploy
 - **Branch restrictions** — only `main` → prod
@@ -765,7 +773,7 @@ jobs:
 </div>
 <div>
 
-### 🔑 OIDC for Cloud Auth
+## 🔑 OIDC for Cloud Auth
 No stored secrets — federated identity
 
 ```yaml
@@ -885,7 +893,7 @@ updates:
 
 ## Key Principles of the Framework
 
-<div class="columns"> 
+<div class="columns">
 <div>
 
 - 🔐 Security
