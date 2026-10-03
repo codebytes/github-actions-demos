@@ -19,6 +19,6 @@
     "@eslint/js": "10.0.1",
     "eslint": "^10.9.1",
     "jest": "^30.5.2",
-    "supertest": "^7.0.0"
+    "supertest": "^7.3.0"
   }
 }
